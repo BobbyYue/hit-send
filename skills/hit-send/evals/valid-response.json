@@ -1,0 +1,26 @@
+{
+  "decision": "polish",
+  "revised_text": "想请你今天 5 点前确认一下这个口径，明天评审会用到。",
+  "recommended_label": "清楚推进",
+  "alternatives": [
+    {
+      "label": "自然简洁",
+      "text": "这个口径想请你帮忙确认下，明天评审要用，今天 5 点前回复我可以吗？",
+      "rationale": "更口语，适合已有共同背景的同事。"
+    }
+  ],
+  "summary": "补清了动作和时间",
+  "findings": [
+    {
+      "dimension": "action",
+      "issue": "原句只说了“看一下”，需要对方自己判断要确认什么。",
+      "suggestion": "明确请对方确认口径，并说明回复形式。"
+    },
+    {
+      "dimension": "timing",
+      "issue": "明天评审会用，但没有说明何时需要反馈。",
+      "suggestion": "补充今天 5 点前这一真实反馈时间。"
+    }
+  ],
+  "channel_advice": ""
+}

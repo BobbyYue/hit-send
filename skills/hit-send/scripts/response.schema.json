@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "decision": {
+      "type": "string",
+      "enum": ["pass", "polish", "rewrite", "switch_channel"]
+    },
+    "revised_text": {
+      "type": "string"
+    },
+    "recommended_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "label",
+          "text",
+          "rationale"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 2
+    },
+    "summary": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "intent",
+              "conclusion",
+              "context",
+              "judgment",
+              "action",
+              "timing",
+              "emotion",
+              "reply_cost",
+              "closure",
+              "channel"
+            ]
+          },
+          "issue": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "suggestion": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "dimension",
+          "issue",
+          "suggestion"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 3
+    },
+    "channel_advice": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "decision",
+    "revised_text",
+    "recommended_label",
+    "alternatives",
+    "summary",
+    "findings",
+    "channel_advice"
+  ],
+  "additionalProperties": false
+}

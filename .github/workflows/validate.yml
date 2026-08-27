@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate public package
+        run: python3 scripts/validate_repo.py
+      - name: Test H5 contracts and server
+        run: npm test --prefix apps/feishu-h5
+      - name: Validate machine response fixture
+        run: python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json
+      - name: Validate behavior cases
+        run: python3 skills/hit-send/scripts/validate_behavior_cases.py skills/hit-send/evals/behavior-cases.json

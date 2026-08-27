@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f5f6f8" />
+    <title>这句能发吗？</title>
+    <link rel="stylesheet" href="/styles.css?v=20260728-3" />
+    <script src="https://s3.bytecdn.cn/ee/lark/js_sdk/h5-js-sdk-1.4.13.js"></script>
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="page-title">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </span>
+          <div class="title-copy">
+            <h1>这句能发吗？</h1>
+            <p class="title-promise">
+              <span id="scene-label">替对方读一遍，让消息清楚、得体、好回复</span>
+            </p>
+          </div>
+        </div>
+        <span id="environment-badge" class="status-badge" hidden>预览</span>
+      </header>
+
+      <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+        <span class="toast-mark" aria-hidden="true">✓</span>
+        <span id="toast-text"></span>
+      </div>
+
+      <div class="workspace">
+        <section id="context-section" class="section context-section" hidden>
+          <div class="section-heading">
+            <h2>引用消息</h2>
+            <span id="context-count"></span>
+          </div>
+          <div id="context-list" class="context-list"></div>
+        </section>
+
+        <section class="section composer-section">
+          <div class="field-heading">
+            <label id="source-label" for="source-input">要检查的草稿</label>
+            <span id="character-count">0 / 12000</span>
+          </div>
+          <div class="textarea-frame">
+            <textarea
+              id="source-input"
+              rows="7"
+              maxlength="12000"
+              placeholder="输入或粘贴一段工作消息"
+            ></textarea>
+            <div class="field-meta">
+              <span id="source-state" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <fieldset class="mode-control">
+            <legend>表达方式</legend>
+            <div class="segments" role="radiogroup" aria-label="表达方式">
+              <label><input type="radio" name="mode" value="original" checked /><span>原意优先</span></label>
+              <label><input type="radio" name="mode" value="direct" /><span>更直接</span></label>
+              <label><input type="radio" name="mode" value="softer" /><span>更柔和</span></label>
+              <label><input type="radio" name="mode" value="concise" /><span>更精简</span></label>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button id="read-clipboard-button" class="secondary-button" type="button" hidden>
+              读取剪贴板
+            </button>
+            <button id="submit-button" class="primary-button" type="button">
+              帮我过一遍
+            </button>
+          </div>
+          <p id="error-message" class="error-message" role="alert" hidden></p>
+        </section>
+
+        <section id="loading-section" class="section loading-section" aria-live="polite" hidden>
+          <div class="loading-heading">
+            <span class="loading-indicator" aria-hidden="true"></span>
+            <div>
+              <strong>正在替对方读一遍</strong>
+              <span>检查信息、行动和语气</span>
+            </div>
+          </div>
+          <div class="result-skeleton" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </section>
+
+        <section id="result-section" class="section result-section" aria-live="polite" hidden>
+          <div class="result-heading">
+            <div>
+              <span id="decision-label" class="decision-label"></span>
+              <h2 id="result-summary"></h2>
+            </div>
+            <button id="copy-button" class="copy-button" type="button">复制文案</button>
+          </div>
+
+          <div class="version-workspace">
+            <div id="version-tabs" class="version-tabs" role="tablist"></div>
+            <textarea id="result-text" class="result-text" rows="7" readonly></textarea>
+            <p id="version-rationale" class="rationale"></p>
+          </div>
+
+          <div id="findings-section" class="findings" hidden>
+            <h3>值得留意</h3>
+            <ul id="findings-list"></ul>
+          </div>
+
+          <div id="channel-section" class="channel-advice" hidden>
+            <h3>渠道建议</h3>
+            <p id="channel-text"></p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

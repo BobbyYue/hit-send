@@ -1,0 +1,8 @@
+interface:
+  display_name: "这句能发吗？｜Hit Send?"
+  short_description: "发送前检查消息，或根据选中的会话内容生成自然、可执行的回复"
+  brand_color: "#2563EB"
+  default_prompt: "Use $hit-send to check this workplace message or draft a grounded reply from the selected context."
+
+policy:
+  allow_implicit_invocation: true

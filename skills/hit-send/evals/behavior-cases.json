@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "pass_clear_status",
+      "message": "数据已经补齐，明天下午可以正常评审。",
+      "mode": "original",
+      "allowed_decisions": ["pass"],
+      "must_preserve": ["明天下午"],
+      "must_not_add": [],
+      "max_alternatives": 0
+    },
+    {
+      "id": "question_loaded_tone",
+      "message": "我们没有会议室了吗？",
+      "mode": "original",
+      "allowed_decisions": ["polish", "rewrite"],
+      "must_preserve": ["会议室"],
+      "must_not_add": ["预订", "负责人", "今天"],
+      "max_alternatives": 1
+    },
+    {
+      "id": "historical_frustration",
+      "message": "现在知道重要了，当时推进 ABC 策略时都不想做。",
+      "mode": "original",
+      "allowed_decisions": ["rewrite"],
+      "must_preserve": ["现在", "当时", "ABC"],
+      "must_not_add": ["没有做下去", "没有完成", "没有落地", "下一步", "后续可以"],
+      "max_alternatives": 1
+    },
+    {
+      "id": "expression_only_no_action",
+      "message": "这次终于开始重视了，之前投入确实不够。",
+      "mode": "original",
+      "allowed_decisions": ["pass", "polish"],
+      "must_preserve": ["这次", "之前", "投入"],
+      "must_not_add": ["负责人", "截止时间", "下一步", "建议"],
+      "max_alternatives": 1
+    },
+    {
+      "id": "vague_urgent_request",
+      "message": "这个明天要用，怎么还没弄好，赶紧处理一下。",
+      "mode": "original",
+      "allowed_decisions": ["rewrite"],
+      "must_preserve": ["明天"],
+      "must_not_add": ["今天 5 点", "保证完成"],
+      "max_alternatives": 1
+    },
+    {
+      "id": "clear_direct_request",
+      "message": "这个明天评审要用，请同步当前进度和预计完成时间；如果有风险也请一起说明。",
+      "mode": "original",
+      "allowed_decisions": ["pass"],
+      "must_preserve": ["明天", "当前进度", "预计完成时间"],
+      "must_not_add": [],
+      "max_alternatives": 0
+    },
+    {
+      "id": "bounded_refusal",
+      "message": "这个需求这周做不了，我可以先把影响范围整理出来，下周再排期。",
+      "mode": "original",
+      "allowed_decisions": ["pass", "polish"],
+      "must_preserve": ["这周做不了", "下周"],
+      "must_not_add": ["本周完成", "保证"],
+      "max_alternatives": 1
+    },
+    {
+      "id": "uncertain_risk",
+      "message": "目前看可能会影响周五上线，我还在确认具体范围，下午四点前同步结论。",
+      "mode": "original",
+      "allowed_decisions": ["pass"],
+      "must_preserve": ["可能", "周五", "下午四点前"],
+      "must_not_add": ["一定", "已经确认"],
+      "max_alternatives": 0
+    },
+    {
+      "id": "domain_term_and_number",
+      "message": "ABC 策略覆盖率是 80%，周三复核口径。",
+      "mode": "concise",
+      "allowed_decisions": ["pass", "polish"],
+      "must_preserve": ["ABC", "80%", "周三"],
+      "must_not_add": ["90%", "MMR"],
+      "max_alternatives": 1
+    },
+    {
+      "id": "motive_judgment_without_evidence",
+      "message": "他就是不想配合。",
+      "mode": "original",
+      "allowed_decisions": ["rewrite", "switch_channel"],
+      "must_preserve": [],
+      "must_not_add": ["没有回复", "拒绝执行", "项目延期"],
+      "max_alternatives": 1
+    }
+  ]
+}

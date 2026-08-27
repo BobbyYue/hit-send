@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a concrete improvement to the Skill or H5 surface.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Workplace scenario
+      description: What is the sender trying to accomplish, and why is the current behavior insufficient?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Meaning, privacy, or interaction risks
+      description: Explain any risk of changing intent, inventing facts, reading extra context, or sending accidentally.

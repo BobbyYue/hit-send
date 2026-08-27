@@ -1,0 +1,30 @@
+name: Bug report
+description: Report an incorrect rewrite, product failure, or documentation problem using synthetic data.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observable problem and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Anonymized example
+      description: Use synthetic text. Do not include private chats, internal links, or credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: surface
+    attributes:
+      label: Surface and version
+      placeholder: Skill, local H5, or Feishu/Lark H5; commit or release
