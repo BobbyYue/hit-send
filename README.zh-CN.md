@@ -3,10 +3,11 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
+[![Version](https://img.shields.io/badge/version-0.1.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
-[English](README.md) · [安装](#安装) · [怎么用](#怎么用) · [可选-h5-入口](#可选-h5-入口)
+[English](README.md) · [安装](#安装) · [怎么用](#怎么用) · [可选-h5-入口](#可选-h5-入口) · [最新版本](https://github.com/BobbyYue/hit-send/releases/latest)
 
 Hit Send 是一个面向职场短消息的开源 Agent Skill。它会在发送前判断消息是否清楚、好回复、语气合适，并在确实有必要时做最小改写，同时保留事实、立场、责任主体、时间、承诺和你的日常说话方式。
 
@@ -47,6 +48,10 @@ cp -R ./hit-send/skills/hit-send "<你的 Agent Skill 目录>/hit-send"
 ```
 
 需要复制整个目录，而不是只复制 `SKILL.md`。部分 Agent 安装后需要重新加载会话。
+
+### 网页或桌面客户端导入
+
+下载[最新 Release](https://github.com/BobbyYue/hit-send/releases/latest)，解压后通过客户端的 Skill 界面导入 `skills/hit-send`。除非客户端明确支持仓库子目录，否则不要直接导入仓库根目录。
 
 ## 怎么用
 

@@ -3,10 +3,11 @@
 **Before you send, let AI read the message as the recipient.**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
+[![Version](https://img.shields.io/badge/version-0.1.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
-[中文说明](README.zh-CN.md) · [Install](#install) · [Use it](#use-it) · [Optional H5 interface](#optional-h5-interface)
+[中文说明](README.zh-CN.md) · [Install](#install) · [Use it](#use-it) · [Optional H5 interface](#optional-h5-interface) · [Latest release](https://github.com/BobbyYue/hit-send/releases/latest)
 
 Hit Send is an open-source Agent Skill for short workplace messages. It checks whether a draft is clear, actionable, appropriately direct, and safe to send, then makes the smallest useful revision without changing the writer's facts, position, ownership, deadline, or voice.
 
@@ -48,6 +49,10 @@ cp -R ./hit-send/skills/hit-send "<YOUR_AGENT_SKILLS_DIR>/hit-send"
 ```
 
 Copy the complete folder, not only `SKILL.md`, and reload the agent if required by the host.
+
+### Web or desktop import
+
+Download the [latest release](https://github.com/BobbyYue/hit-send/releases/latest), extract it, and import `skills/hit-send` through the client's Skill interface. Do not import the repository root unless that client explicitly supports repository subpaths.
 
 ## Use it
 
