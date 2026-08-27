@@ -3,30 +3,69 @@
 **Before you send, let AI read the message as the recipient.**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.1.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.1-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
-[中文说明](README.zh-CN.md) · [Install](#install) · [Use it](#use-it) · [Optional H5 interface](#optional-h5-interface) · [Latest release](https://github.com/BobbyYue/hit-send/releases/latest)
+[中文说明](README.zh-CN.md) · [Examples](#examples-by-scenario) · [Install](#install) · [Use it](#use-it) · [Optional H5 interface](#optional-h5-interface) · [Latest release](https://github.com/BobbyYue/hit-send/releases/latest)
 
 Hit Send is an open-source Agent Skill for short workplace messages. It checks whether a draft is clear, actionable, appropriately direct, and safe to send, then makes the smallest useful revision without changing the writer's facts, position, ownership, deadline, or voice.
 
 It is designed for messages such as requests, reminders, status updates, disagreements, risk alerts, handoffs, short emails, and replies based on selected conversation context. It never sends the message for you.
 
-![Hit Send H5 preview](docs/assets/hit-send-h5.png)
+## Examples by scenario
 
-## What it helps with
+Hit Send does not force every message into the same polite template. It keeps the writer's intent and makes the smallest change needed for the recipient to understand or respond.
 
-| Situation | What Hit Send checks |
-| --- | --- |
-| Ask for help or confirmation | Is the request, owner, expected response, and timing clear? |
-| Remind or escalate | Does the message preserve urgency without vague pressure or accusation? |
-| Disagree or correct | Are facts separated from assumptions about motive, attitude, or competence? |
-| Report risk | Can the recipient see the current state, uncertainty, impact, and next decision? |
-| Reply to a conversation | Is the reply grounded only in the selected context and supplied facts? |
-| Express frustration | Is the legitimate concern visible without sarcasm or invented claims? |
+### Following up on progress
 
-The default is one recommended version. A second version appears only when it represents a genuinely different strategy, such as more direct versus more relationship-sensitive wording.
+**Draft**
+
+> Why isn't this done yet? We need it tomorrow. Please get it sorted ASAP.
+
+**Suggested**
+
+> We need this tomorrow. Where does it stand, and when do you expect it to be ready? Please flag it now if that timing is at risk.
+
+**What changed:** The urgency stays, while blame is replaced by questions the recipient can answer directly.
+
+### Challenging a proposal
+
+**Draft**
+
+> This approach doesn't make sense. We tried it before and it failed. Why are we doing it again?
+
+**Suggested**
+
+> I don't think we should move forward with this approach as-is. We tried it before and it didn't work. What's different this time?
+
+**What changed:** The disagreement and supporting fact remain, without turning the message into a judgment about the people proposing it.
+
+### Raising a delivery risk
+
+**Draft**
+
+> The API is still unstable, so we'll probably miss Friday. The product team needs to decide today what to cut.
+
+**Suggested**
+
+> The API is still unstable, which puts Friday's release at risk. The product team needs to decide today what can come out of scope.
+
+**What changed:** The uncertainty, cause, decision owner, and timing are easier to scan without overstating the outcome.
+
+### Setting a boundary
+
+**Draft**
+
+> I can help this time, but I can't keep taking last-minute requests. You always send them too late. Next time, send them earlier.
+
+**Suggested**
+
+> I can help this time, but I can't take last-minute requests as the default. For future requests, please send them earlier so I can confirm whether I can support the timing.
+
+**What changed:** The boundary and request stay clear, while the absolute accusation is removed.
+
+The default is one recommended version. A second version appears only when it represents a genuinely different strategy, such as more direct versus more relationship-sensitive wording. Actual wording depends on the context provided; Hit Send does not invent missing facts.
 
 ## Install
 
@@ -59,28 +98,25 @@ Download the [latest release](https://github.com/BobbyYue/hit-send/releases/late
 Ask naturally:
 
 ```text
-Use Hit Send to check this message before I send it:
-这个明天要用，怎么还没弄好，赶紧处理一下。
-```
-
-A useful recommendation would make the request replyable without inventing a delivery promise:
-
-```text
-这个明天要用，想确认下目前进度和预计完成时间；如果明天前有风险，也请一起说明。
+Use Hit Send to review this before I send it. Preserve my intent and only change
+what materially affects clarity, actionability, or tone:
+<paste message>
 ```
 
 Other useful prompts:
 
 ```text
-这句话会不会太冲？保留我的不同意见，但不要写得像在指责对方。
+Keep my disagreement, but make sure it does not sound like a personal accusation.
 ```
 
 ```text
-根据我选中的两条消息起草回复。没有提供的进度、决定和承诺不要补。
+Draft a reply from the two selected messages. Do not add any status, decisions,
+or commitments that are not in the context.
 ```
 
 ```text
-帮我把这条风险同步写清楚，重点检查影响、需要谁决定，以及下一次更新时间。
+Make this risk update clear. Check the impact, decision owner, and next update
+time, but do not invent missing details.
 ```
 
 ## What it protects
@@ -127,7 +163,6 @@ Repository layout:
 ```text
 skills/hit-send/   installable Agent Skill
 apps/feishu-h5/    optional browser and Feishu/Lark interface
-docs/assets/       README preview assets
 .github/workflows/ public CI checks
 ```
 

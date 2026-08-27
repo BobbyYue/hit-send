@@ -3,30 +3,69 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.1.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.1-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
-[English](README.md) · [安装](#安装) · [怎么用](#怎么用) · [可选-h5-入口](#可选-h5-入口) · [最新版本](https://github.com/BobbyYue/hit-send/releases/latest)
+[English](README.md) · [分场景看效果](#分场景看效果) · [安装](#安装) · [怎么用](#怎么用) · [可选-h5-入口](#可选-h5-入口) · [最新版本](https://github.com/BobbyYue/hit-send/releases/latest)
 
 Hit Send 是一个面向职场短消息的开源 Agent Skill。它会在发送前判断消息是否清楚、好回复、语气合适，并在确实有必要时做最小改写，同时保留事实、立场、责任主体、时间、承诺和你的日常说话方式。
 
 适用场景包括请求协作、催进度、状态同步、表达不同意见、风险提醒、交接、短邮件，以及根据选中会话起草回复。它不会替你发送消息。
 
-![Hit Send H5 页面预览](docs/assets/hit-send-h5.png)
+## 分场景看效果
 
-## 它主要解决什么
+Hit Send 不会把所有消息都套成同一种客气模板。它会保留你的真实意图，只修改那些确实影响理解、配合或关系的地方。
 
-| 真实场景 | Hit Send 重点检查 |
-| --- | --- |
-| 请求帮助或确认 | 对方是否知道要做什么、怎么回复、什么时候需要？ |
-| 提醒或催进度 | 是否保留紧迫性，同时避免模糊施压和指责？ |
-| 提不同意见或纠错 | 是否把事实与对动机、态度、能力的猜测分开？ |
-| 同步风险 | 对方能否看清现状、不确定性、影响和待决事项？ |
-| 根据会话起草回复 | 是否只使用选中的上下文和你明确提供的事实？ |
-| 表达不满 | 是否保留真实情绪，同时去掉讽刺和未经支持的判断？ |
+### 催进度
 
-默认只给一个推荐版。只有当第二种表达代表真正不同的沟通策略时，才会提供备选。
+**原话**
+
+> 这个明天要用，怎么还没弄好，赶紧处理一下。
+
+**建议版**
+
+> 这个明天要用，想确认下现在做到哪了、预计什么时候能完成；如果明天前有风险，也请一起说下。
+
+**改了什么：** 保留事情的紧迫性，把指责改成对方可以直接回答的进度和风险问题。
+
+### 表达不同意见
+
+**原话**
+
+> 这个方案根本行不通，上次都失败了，为什么还要再做一遍？
+
+**建议版**
+
+> 我不建议按现在的方案直接推进。上次这个方案没有跑通，想先确认下，这次有哪些关键条件发生了变化？
+
+**改了什么：** 保留明确的反对意见和依据，但不把分歧变成对人的否定。
+
+### 同步交付风险
+
+**原话**
+
+> 接口还不稳定，周五大概率发不了。产品今天得决定砍哪些需求。
+
+**建议版**
+
+> 接口目前还不稳定，周五发布存在较大风险。今天需要产品确认哪些需求可以先不做。
+
+**改了什么：** 把原因、风险程度、决策方和时间放到明面上，同时没有把风险写成已经确定的结果。
+
+### 说明边界
+
+**原话**
+
+> 这次我可以帮忙，但不能每次都这么临时，你们总是太晚才提。下次早点。
+
+**建议版**
+
+> 这次我可以帮忙，但临时需求不能成为常态。后续请尽量提前提出，方便我确认能否按时支持。
+
+**改了什么：** 保留边界和要求，去掉“总是”这类容易让对方先进入防御状态的表达。
+
+默认只给一个推荐版。只有当第二种表达代表真正不同的沟通策略时，才会提供备选。具体措辞取决于用户提供的上下文；Hit Send 不会补写缺失的事实。
 
 ## 安装
 
@@ -58,14 +97,8 @@ cp -R ./hit-send/skills/hit-send "<你的 Agent Skill 目录>/hit-send"
 可以直接这样说：
 
 ```text
-使用 Hit Send 检查这句话：
-这个明天要用，怎么还没弄好，赶紧处理一下。
-```
-
-更有效的建议版会把催促变成对方可以回答的问题，同时不虚构交付承诺：
-
-```text
-这个明天要用，想确认下目前进度和预计完成时间；如果明天前有风险，也请一起说明。
+使用 Hit Send 检查下面这句话。保留我的原意，只改确实影响理解、配合或语气的地方：
+<粘贴消息>
 ```
 
 其他常见用法：
@@ -122,7 +155,6 @@ python3 skills/hit-send/scripts/validate_behavior_cases.py skills/hit-send/evals
 ```text
 skills/hit-send/   可安装的 Agent Skill
 apps/feishu-h5/    可选的浏览器与飞书/Lark 页面
-docs/assets/       README 预览图
 .github/workflows/ 公开 CI 检查
 ```
 

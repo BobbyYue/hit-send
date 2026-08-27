@@ -25,7 +25,6 @@ def main() -> int:
         ROOT / "README.zh-CN.md",
         ROOT / "LICENSE",
         ROOT / ".github" / "workflows" / "validate.yml",
-        ROOT / "docs" / "assets" / "hit-send-h5.png",
         SKILL / "SKILL.md",
         SKILL / "agents" / "openai.yaml",
         SKILL / "references" / "method.md",
