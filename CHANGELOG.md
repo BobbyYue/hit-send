@@ -2,6 +2,14 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.1.2 - 2026-09-07
+
+- Clarify the core fact or relationship with minimal edits, retaining the sender's voice and material conditions.
+- Clarify requests and timing only when the original message calls for action; do not invent asks, deadlines, or commitments.
+- Preserve already-clear messages and use parallel phrasing only for real comparisons, not decorative slogans.
+- Add five behavior cases for repetition, tradeoffs, causal uncertainty, unchanged clear facts, and material conditions.
+- The optional H5 application is unchanged; this release updates the skill only.
+
 ## 0.1.1 - 2026-08-27
 
 - Replace H5 screenshots in the top-level documentation with scenario-based message examples.

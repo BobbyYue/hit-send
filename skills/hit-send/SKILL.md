@@ -73,7 +73,7 @@ Check in this order:
 8. **Channel**: Would a short call, private message, task, or document be cheaper or safer than more chat?
 9. **Closure**: For important work, are the conclusion, owner, next update, and record location clear?
 
-The minimum bar for routine collaboration is: why this person received the message, what they need to do, and when a response is needed.
+The minimum bar is understanding why this person received the message. Check action and timing only when the original message or supplied goal calls for them; a clear factual update or disagreement needs no invented request.
 
 ### 4. Decide before rewriting
 
@@ -97,13 +97,14 @@ Use the internal sequence `来意 + 必要背景 + 我的判断 + 对方行动 +
 - Treat changing one vague urgency word into another, such as `赶紧` → `尽快`, as a failed rewrite.
 - Offer a recommendation or A/B choice when doing so reduces decision effort.
 - Separate fact, inference, impact, and recommendation.
-- For reminders and disagreements, use `fact → impact → request`.
+- For reminders and disagreements, clarify supported facts and relevant impact; use `fact → impact → request` only when the original or supplied goal includes an action request. Preserve an observation, refusal, or disagreement without adding a next step.
 - For risk, include current state, evidence or uncertainty, impact, action already underway, and next decision or update.
 - For emotional messages, read [references/method.md](references/method.md) before rewriting.
 - For system integrations or machine output, read [references/product-contract.md](references/product-contract.md).
 - Preserve temporal contrasts such as `现在` versus `当时`; do not flatten them into generic agreement.
 - Do not introduce a completion state, consensus, owner, action, deadline, commitment, or recommendation that the source does not support.
 - Preserve who is speaking, acting, deciding, or owning the work. If the source does not identify a person or group, do not invent one.
+- When repetition hides the point, express the existing change, comparison, condition, tradeoff, or impact with the fewest necessary words. Keep decisive qualifiers beside the statement. Use parallel clauses only for real same-dimension comparisons, preserving direction and uncertainty; never manufacture an opposite, cause, winner, deadline, or request. In the existing send check, confirm the recipient can restate the intended relationship. Leave clear single facts unchanged and stop when clear; rhythm and word count alone do not justify revision.
 
 ### 6. Decide whether alternatives add value
 
@@ -158,7 +159,7 @@ Apply these boundaries:
 - If the source does not support one safe recommendation, state the observable tradeoff and ask for the missing decision criterion. Do not invent a winner.
 - Never call one option `最好` when metrics trade off and the writer has not supplied a priority, weight, or decision standard.
 - Do not demand timing when timing does not affect coordination.
-- Distinguish expressing emotion from emotionalized expression. `我担心会影响明天上线` is useful; `你们到底有没有在推进` assigns blame and should be translated into fact, impact, and request.
+- Distinguish expressing emotion from emotionalized expression. `我担心会影响明天上线` is useful; `你们到底有没有在推进` assigns blame and should be translated into supported fact, impact, and the original request when present.
 - Do not report surface polish, punctuation, or stylistic preferences as method violations.
 - Prefer specific dimensions over `reply_cost`; do not report both `action` and `reply_cost` when they describe the same underlying ambiguity.
 - If no material gap exists, return no reminders.

@@ -2,6 +2,105 @@
   "version": "1.0",
   "cases": [
     {
+      "id": "relation_repeated_observation",
+      "message": "本周预算增加了，新增用户没同步增加。也就是说，预算比上周多了，但新增用户没有跟上预算的增长。增长来源还没拆分，原因暂时不能确定。",
+      "mode": "concise",
+      "allowed_decisions": [
+        "polish",
+        "rewrite"
+      ],
+      "must_preserve": [
+        "预算",
+        "新增用户",
+        "原因"
+      ],
+      "must_not_add": [
+        "存量放大",
+        "预算无效",
+        "今天",
+        "请"
+      ],
+      "max_alternatives": 1
+    },
+    {
+      "id": "relation_tradeoff_no_winner",
+      "message": "A方案预计上线更快，B方案预计后续维护工作更少，现在优先级还没定。",
+      "mode": "original",
+      "allowed_decisions": [
+        "pass"
+      ],
+      "must_preserve": [
+        "预计",
+        "A方案",
+        "B方案",
+        "优先级"
+      ],
+      "must_not_add": [
+        "最好",
+        "建议选",
+        "今天"
+      ],
+      "max_alternatives": 0
+    },
+    {
+      "id": "relation_correlation_no_cause",
+      "message": "版本更新后留存下降了，但还没有实验数据，目前不能确定是不是版本导致的。",
+      "mode": "original",
+      "allowed_decisions": [
+        "pass"
+      ],
+      "must_preserve": [
+        "不能确定",
+        "没有实验数据"
+      ],
+      "must_not_add": [
+        "已证实",
+        "因此回滚",
+        "请"
+      ],
+      "max_alternatives": 0
+    },
+    {
+      "id": "relation_clear_fact_keep",
+      "message": "报表已更新至周三，周四数据尚未到齐。",
+      "mode": "original",
+      "allowed_decisions": [
+        "pass"
+      ],
+      "must_preserve": [
+        "周三",
+        "周四"
+      ],
+      "must_not_add": [
+        "请",
+        "尽快",
+        "今天"
+      ],
+      "max_alternatives": 0
+    },
+    {
+      "id": "relation_condition_no_added_request",
+      "message": "需求范围还没确定，所以排期现在不太好说。准确的排期目前还给不了，得等需求范围确定才行。",
+      "mode": "concise",
+      "allowed_decisions": [
+        "polish",
+        "rewrite"
+      ],
+      "must_preserve": [
+        "需求范围",
+        "排期"
+      ],
+      "must_not_add": [
+        "今天",
+        "明天",
+        "请",
+        "估算",
+        "我会",
+        "我再"
+      ],
+      "max_alternatives": 1
+    },
+    {
       "id": "pass_clear_status",
       "message": "数据已经补齐，明天下午可以正常评审。",
       "mode": "original",
