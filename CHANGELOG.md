@@ -2,6 +2,14 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.1.3 - 2026-09-16
+
+- Add contextual expression review to the existing send check, without an AI score, new response fields, or an extra review loop.
+- Locate the wording, explain its recipient impact, and make the smallest edit while preserving facts, conditions, responsibility, timing, emotion, and intent.
+- Preserve already-clear messages, formal notices, precise terminology, and product names rather than applying a blacklist.
+- Align the machine runtime policy with the skill: observations and disagreements do not need invented actions, reply deadlines, impacts, or commitments.
+- Add synthetic behavior cases and contract tests; run the new tests in CI. The optional H5 application code is unchanged.
+
 ## 0.1.2 - 2026-09-07
 
 - Clarify the core fact or relationship with minimal edits, retaining the sender's voice and material conditions.

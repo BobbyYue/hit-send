@@ -61,7 +61,9 @@ Check in this order:
 8. Would a short call, private message, task, or document be cheaper or safer?
 9. For important work, are conclusion, owner, next update, and record location clear?
 
-Minimum routine bar: why this person received it, what they need to do, and when a response is needed.
+Minimum routine bar: why this person received it. Check action, reply and timing only when the original or supplied goal calls for them; a clear factual update or disagreement needs no invented request.
+
+In this same check, scan for empty abstraction, template filling, purposeless repetition, rhetorical overstatement, audience/channel mismatch and decorative labels. Silently record a candidate quote, concrete recipient impact or explicit style mismatch, smallest fix and protected meaning. Classify confirmed, dismissed or unresolved; "AI-like" alone is not evidence. Preserve justified terms, formal notices, useful structure and clear messages. Merge confirmed issues into one minimal edit and recheck facts, conditions, responsibility, timing, emotion and request. Missing evidence stays unknown. No new agent, score, output field or style-only loop; use existing findings only for material recipient problems.
 
 ## Editing rules
 
@@ -72,7 +74,7 @@ Use `intent + necessary context + writer judgment + recipient action + timing or
 - Replace vague actions such as "看一下", "跟进一下", "尽快", and "大家" with a bounded action when supported.
 - If the message gives a downstream deadline but not a safe delivery deadline, ask for current status and estimated completion time. Never preserve "尽快" or invent a delivery commitment.
 - Treat changing one vague urgency word into another, such as `赶紧` → `尽快`, as a failed rewrite.
-- For reminders, disagreement, and correction, use `verifiable fact → impact → request`.
+- For reminders, disagreement, and correction, use supported fact and impact; add a request only when the original or supplied goal calls for action. Do not invent an impact to fill the template.
 - For risk, cover current state, evidence or uncertainty, impact, action underway, and next decision or update.
 - For emotion, keep the legitimate concern but translate accusation into fact, impact, concern, request, or boundary.
 - For expression-only emotion, translate accusation into fact, perception, and stance; do not add a request merely to complete a template.

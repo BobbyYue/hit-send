@@ -2,6 +2,86 @@
   "version": "1.0",
   "cases": [
     {
+      "id": "expression_repetition_local_fix",
+      "message": "数据已补齐，缺失的数据已经补全了，也就是说现在数据完整了。",
+      "mode": "concise",
+      "allowed_decisions": [
+        "polish",
+        "rewrite"
+      ],
+      "must_preserve": [
+        "数据"
+      ],
+      "must_not_add": [
+        "请",
+        "今天",
+        "验证通过",
+        "我"
+      ],
+      "max_alternatives": 0
+    },
+    {
+      "id": "expression_formal_notice_keep",
+      "message": "维护通知：周五22:00开始维护，只读副本预计中断10分钟，主库写入不受影响。",
+      "mode": "original",
+      "allowed_decisions": [
+        "pass"
+      ],
+      "must_preserve": [
+        "周五22:00",
+        "预计",
+        "10分钟",
+        "主库写入不受影响"
+      ],
+      "must_not_add": [
+        "哈",
+        "呀",
+        "请及时",
+        "保证"
+      ],
+      "max_alternatives": 0
+    },
+    {
+      "id": "expression_disagreement_no_action",
+      "message": "我不认同这个结论，目前只测了缓存命中的请求，不能说整体性能提升了。",
+      "mode": "original",
+      "allowed_decisions": [
+        "pass"
+      ],
+      "must_preserve": [
+        "不认同",
+        "只测了",
+        "缓存命中",
+        "不能说整体性能提升"
+      ],
+      "must_not_add": [
+        "请",
+        "建议",
+        "今天",
+        "抱歉",
+        "补充测试"
+      ],
+      "max_alternatives": 0
+    },
+    {
+      "id": "expression_product_name_not_blacklisted",
+      "message": "“赋能”模块的导出入口已恢复，历史文件没有变化。",
+      "mode": "original",
+      "allowed_decisions": [
+        "pass"
+      ],
+      "must_preserve": [
+        "“赋能”",
+        "导出入口已恢复",
+        "历史文件没有变化"
+      ],
+      "must_not_add": [
+        "请",
+        "效率提升"
+      ],
+      "max_alternatives": 0
+    },
+    {
       "id": "relation_repeated_observation",
       "message": "本周预算增加了，新增用户没同步增加。也就是说，预算比上周多了，但新增用户没有跟上预算的增长。增长来源还没拆分，原因暂时不能确定。",
       "mode": "concise",

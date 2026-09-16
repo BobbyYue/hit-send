@@ -84,7 +84,7 @@ Choose exactly one outcome:
 - `rewrite`: the message needs structural work to become understandable or actionable.
 - `switch_channel`: text is unlikely to resolve the issue; return a short transition message and channel advice.
 
-Do not rewrite merely to demonstrate activity.
+Before choosing, scan for empty abstraction, template filling, purposeless repetition, rhetorical overstatement, audience/channel mismatch and decorative labels. For a candidate issue, silently identify the quote, recipient impact or explicit style mismatch, smallest fix and meaning to protect. "AI-like" alone is not evidence; retain justified terms, formal notices and clear messages. Do not rewrite merely to demonstrate activity.
 
 ### 5. Apply the minimum useful change
 
@@ -105,6 +105,7 @@ Use the internal sequence `来意 + 必要背景 + 我的判断 + 对方行动 +
 - Do not introduce a completion state, consensus, owner, action, deadline, commitment, or recommendation that the source does not support.
 - Preserve who is speaking, acting, deciding, or owning the work. If the source does not identify a person or group, do not invent one.
 - When repetition hides the point, express the existing change, comparison, condition, tradeoff, or impact with the fewest necessary words. Keep decisive qualifiers beside the statement. Use parallel clauses only for real same-dimension comparisons, preserving direction and uncertainty; never manufacture an opposite, cause, winner, deadline, or request. In the existing send check, confirm the recipient can restate the intended relationship. Leave clear single facts unchanged and stop when clear; rhythm and word count alone do not justify revision.
+- Merge confirmed expression issues into one minimal edit, then check facts, conditions, responsibility, timing, emotion and request again. If evidence is missing, retain the uncertainty; do not invent specificity. No extra reviewer, scoring report or style-only loop. Use existing findings only for material recipient problems, never a separate AI-flavor score.
 
 ### 6. Decide whether alternatives add value
 
