@@ -2,6 +2,13 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.3.0 - 2026-09-22
+
+- Require supported detail, useful progression and natural reading-flow evidence in the existing recommendation and alternative checks.
+- Preserve clear originals, register, useful emotion, urgency and requests; no forced story, sentence recipe or phrase blacklist.
+- Upgrade review records to version 2. Missing, unanchored, stale or failed craft evidence blocks Skill delivery.
+- Add fictional writing cases and regression tests. The response JSON API, never-send rule and optional applications are unchanged; native/H5 runtime integration is not added by this release.
+
 ## 0.2.0 - 2026-09-22
 
 - Require source-bound checks for the recommended message and every alternative, covering concrete wording, necessary content, preserved intent, and useful differences between versions.
