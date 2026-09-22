@@ -3,7 +3,7 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.1.3-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -145,11 +145,14 @@ HIT_SEND_PROVIDER=mock npm start
 
 ## 开发与验证
 
+0.2.0 要求在 Skill 交付前提供与原文绑定的检查记录，覆盖推荐版本和每个备选版本。清楚的消息保持原样，催办意图和不确定性不能在润色中丢失。可选 H5 应用本次未接入这条检查路径。详见[升级说明](CHANGELOG.md)。
+
 ```bash
 python3 scripts/validate_repo.py
 npm test --prefix apps/feishu-h5
-python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json
+python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json --schema-only
 python3 skills/hit-send/scripts/validate_behavior_cases.py skills/hit-send/evals/behavior-cases.json
+python3 -B -m unittest discover -s skills/hit-send/tests -v
 ```
 
 ```text

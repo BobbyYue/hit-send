@@ -14,9 +14,12 @@ Contributions that make Hit Send more accurate, natural, portable, or easier to 
 ```bash
 python3 scripts/validate_repo.py
 npm test --prefix apps/feishu-h5
-python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json
+python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json --schema-only
 python3 skills/hit-send/scripts/validate_behavior_cases.py skills/hit-send/evals/behavior-cases.json
+python3 -B -m unittest discover -s skills/hit-send/tests -v
 ```
+
+The fixture command checks structure only. Checked Skill delivery requires an exact source and a completed artifact-bound review; follow the Skill's checked-delivery procedure. The unit suite exercises actual CLI acceptance and rejection paths using synthetic fixtures.
 
 For UI changes, verify the actual H5 page at desktop and mobile widths, keyboard access, copy behavior, empty input, long input, mixed Chinese and English, and error states. A passing contract test alone is not enough.
 

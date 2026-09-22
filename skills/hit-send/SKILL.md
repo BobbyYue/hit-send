@@ -93,8 +93,8 @@ Use the internal sequence `来意 + 必要背景 + 我的判断 + 对方行动 +
 - Put the conclusion, risk, or request before supporting history.
 - Keep only context that changes priority, scope, judgment, or ownership.
 - Convert "看一下", "跟进一下", "尽快", and "大家" into a bounded action when the source supports it.
-- If the source gives a downstream deadline but not a safe delivery deadline, ask for current status and an estimated completion time. Do not preserve "尽快" or invent a delivery commitment.
-- Treat changing one vague urgency word into another, such as `赶紧` → `尽快`, as a failed rewrite.
+- Preserve an explicit request to act, including its urgency. A shared-context "尽快" can remain; remove blame without changing "please handle this" into "please report progress". Ask for an estimate only when it resolves a real coordination gap. Never invent a delivery commitment.
+- Changing an urgency word alone may be enough for a tone-only problem. Check recipient understanding in context, not a blacklist of urgency words.
 - Offer a recommendation or A/B choice when doing so reduces decision effort.
 - Separate fact, inference, impact, and recommendation.
 - For reminders and disagreements, clarify supported facts and relevant impact; use `fact → impact → request` only when the original or supplied goal includes an action request. Preserve an observation, refusal, or disagreement without adding a next step.
@@ -169,11 +169,11 @@ Apply these boundaries:
 
 Keep the response compact:
 
-1. Start with `可以直接发` or one short diagnosis.
+1. Show the copyable message first; `可以直接发` may precede an unchanged original. Keep optional diagnosis after the message.
 2. If `pass`, return the original exactly and stop.
 3. Otherwise show `推荐版`, then a clearly labeled strategy alternative only when it adds a useful choice.
 4. If the user explicitly requests several versions, show at most three total.
-5. When material method gaps exist, add `发送前提醒` with up to three items. Format each as `维度：具体问题。怎么改：具体建议。`
+5. When material method gaps exist, add `发送前提醒` with up to three natural, specific suggestions. Do not display a dimension-by-dimension checklist or repeat the rewrite explanation.
 6. Add channel advice only when text is the wrong medium.
 
 Use labels that explain the strategic difference, such as `自然简洁`, `清楚推进`, `完整稳妥`, `结论结构`, or `谨慎判断`. Avoid empty labels such as `版本一` and `版本二` when a useful distinction is available.
@@ -195,6 +195,16 @@ When the caller requests `MACHINE_JSON`, return only JSON matching [scripts/resp
 - `findings` must be empty when no material communication-method gap exists.
 - `channel_advice` is an empty string unless changing channel would materially reduce cost or conflict.
 - For `reply`, `revised_text` is the recommended reply and `pass` is not a valid decision because there is no original draft to approve.
+
+## Required Delivery Check
+
+Use the same checks for human and machine output; do not show the internal record to the user. For human output, first represent the recommendation with the existing response schema internally. Keep source text ephemeral and local; remove temporary message/review files after validation unless the user explicitly requests retention. Do not log selected text.
+
+1. Preserve the input exactly in a temporary source file and the structured candidate in a response file. Run `python3 scripts/validate_response.py RESPONSE.json --source SOURCE.txt --prepare-review REVIEW.json`.
+2. Complete the pending review using `scripts/reader_value.py` guidance: direct expression, necessary content, preserved intent/urgency/uncertainty, and each alternative's meaningful difference. Quote the candidate and source; retain useful contrasts and decisive caveats. Do not invent context or fill every method field. For `reply`, review meaning against supplied conversation and explicit drafting instructions; never choose `pass` without an original draft.
+3. Run `python3 scripts/validate_response.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`. Deliver only after it passes; unresolved issues require a scoped revision. A changed source or response requires a new bound review. `--schema-only` is a developer check and cannot authorize delivery.
+
+The JSON response format and copy/replace behavior are unchanged. This validates the skill output; a separate native application must call the checked path to enforce it in that application.
 
 ## Method Reference
 

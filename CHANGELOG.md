@@ -2,6 +2,15 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.2.0 - 2026-09-22
+
+- Require source-bound checks for the recommended message and every alternative, covering concrete wording, necessary content, preserved intent, and useful differences between versions.
+- Keep clear originals unchanged and retain legitimate urgency, refusal, useful contrasts, and uncertainty. An expedite request must not silently become a progress question.
+- Reject missing reviews, stale source or response files, unresolved findings, and alternatives without their own review. The response JSON schema is unchanged.
+- CLI upgrade: checked delivery requires `--source` and `--review`; `--prepare-review` creates pending records. `--schema-only` is explicitly limited to structural checks and cannot authorize delivery.
+- Run delivery and negative regression tests in CI. Review material stays local and ephemeral during ordinary use.
+- This updates the Skill only. The optional H5 application and native applications are not newly integrated with the checked-delivery path.
+
 ## 0.1.3 - 2026-09-16
 
 - Add contextual expression review to the existing send check, without an AI score, new response fields, or an extra review loop.

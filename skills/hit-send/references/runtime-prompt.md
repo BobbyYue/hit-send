@@ -72,8 +72,8 @@ Use `intent + necessary context + writer judgment + recipient action + timing or
 - Put the conclusion, risk, or request before supporting history.
 - Keep only context that changes priority, scope, judgment, or ownership.
 - Replace vague actions such as "看一下", "跟进一下", "尽快", and "大家" with a bounded action when supported.
-- If the message gives a downstream deadline but not a safe delivery deadline, ask for current status and estimated completion time. Never preserve "尽快" or invent a delivery commitment.
-- Treat changing one vague urgency word into another, such as `赶紧` → `尽快`, as a failed rewrite.
+- Preserve the action request and urgency; a shared-context "尽快" may remain. Ask for an estimate only when it resolves an actual coordination gap. Do not replace a request to act with a request to report status or invent a delivery commitment.
+- For a tone-only problem, a small urgency-word change can be sufficient. Judge understanding and intent, not a prohibited-word list.
 - For reminders, disagreement, and correction, use supported fact and impact; add a request only when the original or supplied goal calls for action. Do not invent an impact to fill the template.
 - For risk, cover current state, evidence or uncertainty, impact, action underway, and next decision or update.
 - For emotion, keep the legitimate concern but translate accusation into fact, impact, concern, request, or boundary.
@@ -173,14 +173,18 @@ Input:
 
 `这个你们怎么还没弄好？明天就要用了，赶紧处理一下。`
 
-Bad revision:
+Context-dependent revision:
 
 `这个还没处理完，明天就要用了，麻烦尽快跟进。`
 
-The bad revision only replaces one vague urgency word with another and still leaves the recipient unsure what to report.
+This revision may be sufficient when both parties know the task and only the accusatory tone needs repair. If the task reference is unclear, ask for that context rather than inventing it.
 
-Better revision:
+Minimal revision when the task is already shared:
 
-`这个明天要用，想确认下目前进度和预计完成时间；如果明天前有风险，也请一起说明。`
+`这个明天要用，麻烦抓紧处理一下。`
 
-The better revision keeps urgency, requests current status and an estimate, and does not invent a response deadline or delivery commitment.
+This keeps the request to act and the stated timing while removing blame. A progress question is optional when needed, not a substitute for the action request.
+
+## Delivery validation
+
+Before delivery follow `SKILL.md` Required Delivery Check with `scripts/validate_response.py --source --review`. The pending review produced by `--prepare-review` must be completed against the actual source and recommendation. Missing review, changed inputs, invented anchors or unresolved problems block checked delivery; `--schema-only` checks structure only. Keep internal evidence out of the user-facing message, do not log message text, and remove temporary text/review files afterward. Preserve the existing JSON shape for callers.

@@ -23,9 +23,9 @@ jobs:
         run: python3 scripts/validate_repo.py
       - name: Test H5 contracts and server
         run: npm test --prefix apps/feishu-h5
-      - name: Validate machine response fixture
-        run: python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json
+      - name: Validate machine response fixture structure only
+        run: python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json --schema-only
       - name: Validate behavior cases
         run: python3 skills/hit-send/scripts/validate_behavior_cases.py skills/hit-send/evals/behavior-cases.json
-      - name: Test expression review contracts
+      - name: Test checked delivery and rejection of missing or stale reviews
         run: python3 -B -m unittest discover -s skills/hit-send/tests -v

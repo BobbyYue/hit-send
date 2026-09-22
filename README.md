@@ -3,7 +3,7 @@
 **Before you send, let AI read the message as the recipient.**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.1.3-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -149,13 +149,16 @@ Open <http://127.0.0.1:8787>. See the [H5 deployment guide](apps/feishu-h5/READM
 
 ## Development
 
+Version 0.2.0 requires source-bound review records before Skill delivery, including every alternative. Clear messages stay unchanged, and urgency or uncertainty must survive editing. The optional H5 application is not newly integrated with this check. See the [upgrade notes](CHANGELOG.md).
+
 Run the public-package checks:
 
 ```bash
 python3 scripts/validate_repo.py
 npm test --prefix apps/feishu-h5
-python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json
+python3 skills/hit-send/scripts/validate_response.py skills/hit-send/evals/valid-response.json --schema-only
 python3 skills/hit-send/scripts/validate_behavior_cases.py skills/hit-send/evals/behavior-cases.json
+python3 -B -m unittest discover -s skills/hit-send/tests -v
 ```
 
 Repository layout:
