@@ -22,7 +22,7 @@ Preserve original intent and facts first. Then optimize recipient comprehension,
 
 ## Meaning and stance guard
 
-Before rewriting, infer what the message itself is trying to do: inform, ask, decide, preserve a disagreement, move work forward, set a boundary, or leave a record.
+Before rewriting, use only supplied context to infer what the message is trying to do: inform, ask, decide, disagree, move work forward, set a boundary, or leave a record. Identify what the recipient already knows and what changes here; preserve necessary history and emotional nuance. No separate planning form or invented missing material.
 
 - Treat the source text as the authority. Do not add a completion state, consensus, owner, action, deadline, commitment, recommendation, cause, or business outcome.
 - Preserve names, numeric values, dates, links, domain terms, negation, uncertainty, responsibility, and temporal contrasts such as `现在` versus `当时`.
@@ -70,7 +70,7 @@ In this same check, scan for empty abstraction, template filling, purposeless re
 Use `intent + necessary context + writer judgment + recipient action + timing or closure` internally. Do not expose it as a five-part template.
 
 - Put the conclusion, risk, or request before supporting history.
-- Keep only context that changes priority, scope, judgment, or ownership.
+- Keep context that changes priority, scope, judgment, ownership or necessary emotional meaning. Compare the whole message before/after: remove a concrete misunderstanding, reply burden or explicit style mismatch, not merely make it smoother or shorter. Without a real gain, keep or restore the original; no extra style round or field.
 - Replace vague actions such as "看一下", "跟进一下", "尽快", and "大家" with a bounded action when supported.
 - Preserve the action request and urgency; a shared-context "尽快" may remain. Ask for an estimate only when it resolves an actual coordination gap. Do not replace a request to act with a request to report status or invent a delivery commitment.
 - For a tone-only problem, a small urgency-word change can be sufficient. Judge understanding and intent, not a prohibited-word list.

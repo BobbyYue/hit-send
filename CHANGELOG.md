@@ -2,6 +2,14 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.4.0 - 2026-09-30
+
+- Identify the supplied recipient context, what this message changes, and the writer's stance before rewriting; do not invent missing background or a new communication goal.
+- Compare the complete original and revision for a concrete misunderstanding, reply burden or requested style mismatch. Keep or restore the original when the benefit is unclear.
+- Add conditionally loaded writing-method cases, complete fictional message examples and fix/keep/fidelity regressions. Preserve necessary history, useful emotion, requests, uncertainty and author voice.
+- Align the machine runtime policy with these changes. Version 2 review fields, response JSON, copy/replace behavior and review limits are unchanged; no extra style-only loop.
+- This is a Skill update, not a new native/H5 runtime integration. Offline and bounded writing-case checks do not guarantee every host or model will produce the same result.
+
 ## 0.3.0 - 2026-09-22
 
 - Require supported detail, useful progression and natural reading-flow evidence in the existing recommendation and alternative checks.

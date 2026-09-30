@@ -3,7 +3,7 @@
 **Before you send, let AI read the message as the recipient.**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.3.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -149,7 +149,7 @@ Open <http://127.0.0.1:8787>. See the [H5 deployment guide](apps/feishu-h5/READM
 
 ## Development
 
-Version 0.3.0 checks supported details, useful progression and natural reading flow in the existing review, including every alternative. Clear messages stay unchanged; intent, urgency, uncertainty and useful emotion survive editing. Regenerate old records for review version 2. The optional H5 and native applications are not newly integrated with this check. See the [writing examples](skills/hit-send/references/writing-craft.md) and [upgrade notes](CHANGELOG.md).
+Version 0.4.0 identifies the supplied recipient context and writer's stance before rewriting. Existing reviews explain what misunderstanding or reply burden an edit removes; clearer or shorter wording alone is not sufficient. Clear messages stay unchanged, with intent, urgency, uncertainty and useful emotion preserved. [Contextual cases](skills/hit-send/references/writing-craft-cases.md) and [complete examples](skills/hit-send/references/writing-composition-examples.md) are loaded only when needed. Review version 2 and the response JSON are unchanged. The optional H5 and native applications are not newly integrated with this check. See the [upgrade notes](CHANGELOG.md).
 
 Run the public-package checks:
 

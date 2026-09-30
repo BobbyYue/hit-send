@@ -3,7 +3,7 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.3.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -145,7 +145,7 @@ HIT_SEND_PROVIDER=mock npm start
 
 ## 开发与验证
 
-0.3.0 在已有检查中确认细节有依据、表达有作用、句子读得顺，覆盖推荐版本和每个备选版本。清楚的消息保持原样，原本诉求、催办意图、不确定性和有用的情绪信息不能丢失。检查记录升级为第 2 版，旧记录需重新生成。可选 H5 和原生应用本次未新增接入。见[写法对照案例](skills/hit-send/references/writing-craft.md)及[升级说明](CHANGELOG.md)。
+0.4.0 改写前先判断已提供的对方背景和发送者立场，再检查修改具体减少了什么误解或追问，不能只凭“更顺、更短”决定改写。清楚的消息保持原样，原本诉求、催办意图、不确定性和有用的情绪信息不能丢失。[技巧对应案例](skills/hit-send/references/writing-craft-cases.md)和[完整消息案例](skills/hit-send/references/writing-composition-examples.md)仅在需要时读取。沿用第 2 版检查记录及现有响应结构，可选 H5 和原生应用本次未新增接入。见[升级说明](CHANGELOG.md)。
 
 ```bash
 python3 scripts/validate_repo.py

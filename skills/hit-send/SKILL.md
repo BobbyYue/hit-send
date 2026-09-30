@@ -49,7 +49,7 @@ Classify the message as one or more of:
 - close a decision or handoff;
 - respond to emotion.
 
-Use surrounding context when supplied. Do not ask a question unless a missing fact makes a responsible rewrite impossible.
+Use only supplied context. Before phrasing, identify what the recipient already knows, what this message changes, and the writer's stance. Keep necessary history and emotional nuance; missing material is not permission to invent it. Do not ask unless a missing fact makes a responsible rewrite impossible. No separate planning form is needed.
 
 Also infer the writer's apparent outcome: inform, ask, decide, preserve a disagreement, move work forward, set a boundary, or leave a record. If choosing between plausible outcomes would change the stance or add an action, use the most meaning-preserving recommendation and do not silently choose a new goal.
 
@@ -84,7 +84,7 @@ Choose exactly one outcome:
 - `rewrite`: the message needs structural work to become understandable or actionable.
 - `switch_channel`: text is unlikely to resolve the issue; return a short transition message and channel advice.
 
-Before choosing, scan for empty abstraction, template filling, purposeless repetition, rhetorical overstatement, audience/channel mismatch and decorative labels. For a candidate issue, silently identify the quote, recipient impact or explicit style mismatch, smallest fix and meaning to protect. "AI-like" alone is not evidence; retain justified terms, formal notices and clear messages. Do not rewrite merely to demonstrate activity.
+Before choosing, scan for empty abstraction, template filling, purposeless repetition, overstatement and audience/channel mismatch. Identify the quote, recipient impact, smallest fix and protected meaning. Compare the whole message before/after: does the edit remove a real misunderstanding, reply burden or explicit style mismatch? "Smoother", "shorter" or "AI-like" alone is not evidence. Keep the original without a concrete gain; no separate planning or style round.
 
 ### 5. Apply the minimum useful change
 

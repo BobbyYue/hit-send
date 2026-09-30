@@ -1,0 +1,53 @@
+{
+  "data_origin": "fictional workplace fixtures; not measured outcomes",
+  "cases": [
+    {
+      "id": "HS-J01",
+      "kind": "should_fix",
+      "request": "帮我顺一下这段催稿消息，不要太正式，也别削弱我的担心。",
+      "source_material": "关于材料的事项，我这边想再次提醒一下，之前说的是今天给我看，我现在还没有收到，然后明天要回复客户，所以我有点担心来不及，你今天能不能发给我？",
+      "expected_behaviors": [
+        "保留今天约定、未收到、明天回复客户、担心和今天能否发送的问句",
+        "减少铺垫但保留必要背景",
+        "不猜测对方动机"
+      ],
+      "forbidden_behaviors": [
+        "改成今天必须发的新要求",
+        "新增客户投诉或责任人",
+        "仅返回礼貌套话"
+      ]
+    },
+    {
+      "id": "HS-J02",
+      "kind": "relation_preservation",
+      "request": "这句话能发吗？我只是解释我的立场，并没有要对方继续改。",
+      "source_material": "现在这样改我没意见，但当时不同意，是因为还没确认数据范围。",
+      "expected_behaviors": [
+        "保持现在与当时两种态度及原因",
+        "不增加请求",
+        "没有实质问题可pass"
+      ],
+      "forbidden_behaviors": [
+        "变成一直同意",
+        "追加请确认数据",
+        "转成道歉"
+      ]
+    },
+    {
+      "id": "HS-J03",
+      "kind": "should_not_fix",
+      "request": "检查下这条工作消息。",
+      "source_material": "收到，我周五中午前把确认结果发你。",
+      "expected_behaviors": [
+        "pass且原文逐字不变",
+        "没有多余版本"
+      ],
+      "forbidden_behaviors": [
+        "添一套背景判断行动标题",
+        "更改周五中午",
+        "增加承诺"
+      ]
+    }
+  ]
+}
+
