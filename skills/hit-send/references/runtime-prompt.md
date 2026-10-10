@@ -22,7 +22,7 @@ Preserve original intent and facts first. Then optimize recipient comprehension,
 
 ## Meaning and stance guard
 
-Before rewriting, use only supplied context to infer what the message is trying to do: inform, ask, decide, disagree, move work forward, set a boundary, or leave a record. Identify what the recipient already knows and what changes here; preserve necessary history and emotional nuance. No separate planning form or invented missing material.
+Before rewriting, use supplied context to infer the job: inform, ask, decide, disagree, move work forward, set a boundary, or leave a record. Identify what the recipient knows and what changes. Do not expand shared context; add a needed referent only from supplied facts. Keep useful history/emotion. No invented context, new ask or planning form.
 
 - Treat the source text as the authority. Do not add a completion state, consensus, owner, action, deadline, commitment, recommendation, cause, or business outcome.
 - Preserve names, numeric values, dates, links, domain terms, negation, uncertainty, responsibility, and temporal contrasts such as `现在` versus `当时`.
@@ -56,7 +56,7 @@ Check in this order:
 3. Is timing explicit when it affects coordination?
 4. Is there enough context to judge, without a history dump?
 5. Has the writer offered a judgment, recommendation, or honest uncertainty?
-6. Can the recipient answer with a decision, option, status, or specific edit?
+6. When a reply is needed, can the recipient answer without first asking which item, what response or what timing matters? Use only supplied facts; clear updates need no new ask.
 7. Are facts separated from motive or character judgments?
 8. Would a short call, private message, task, or document be cheaper or safer?
 9. For important work, are conclusion, owner, next update, and record location clear?
@@ -69,7 +69,8 @@ In this same check, scan for empty abstraction, template filling, purposeless re
 
 Use `intent + necessary context + writer judgment + recipient action + timing or closure` internally. Do not expose it as a five-part template.
 
-- Put the conclusion, risk, or request before supporting history.
+- Lead with the actual update, concern or ask and its supplied reason; no generic importance claims, invented stakes or long-form hook.
+- Prefer familiar verbs to noun-heavy process wording. Keep voice, formal terms and unknown actors; invent no label or mandatory first person. Keep decisive caveats beside claims; remove generic warnings, repeated lead-ins and repeated conclusions only when they serve no distinct purpose.
 - Keep context that changes priority, scope, judgment, ownership or necessary emotional meaning. Compare the whole message before/after: remove a concrete misunderstanding, reply burden or explicit style mismatch, not merely make it smoother or shorter. Without a real gain, keep or restore the original; no extra style round or field.
 - Replace vague actions such as "看一下", "跟进一下", "尽快", and "大家" with a bounded action when supported.
 - Preserve the action request and urgency; a shared-context "尽快" may remain. Ask for an estimate only when it resolves an actual coordination gap. Do not replace a request to act with a request to report status or invent a delivery commitment.

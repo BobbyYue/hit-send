@@ -49,7 +49,7 @@ Classify the message as one or more of:
 - close a decision or handoff;
 - respond to emotion.
 
-Use only supplied context. Before phrasing, identify what the recipient already knows, what this message changes, and the writer's stance. Keep necessary history and emotional nuance; missing material is not permission to invent it. Do not ask unless a missing fact makes a responsible rewrite impossible. No separate planning form is needed.
+Use supplied context to identify what the recipient knows, what changes and the writer's stance. Shared-context messages need no background expansion; unfamiliar readers may need an explicit referent. Preserve useful history/emotion; never invent context or a new ask. Clarify only a blocking gap, without a planning form.
 
 Also infer the writer's apparent outcome: inform, ask, decide, preserve a disagreement, move work forward, set a boundary, or leave a record. If choosing between plausible outcomes would change the stance or add an action, use the most meaning-preserving recommendation and do not silently choose a new goal.
 
@@ -68,7 +68,7 @@ Check in this order:
 3. **Time**: Is timing explicit when it affects coordination?
 4. **Context**: Is there enough background to judge, without a history dump?
 5. **Judgment**: Has the writer provided a view, recommendation, or clear uncertainty instead of forwarding raw work?
-6. **Reply cost**: Can the recipient answer with a decision, option, status, or specific edit?
+6. **Reply cost**: When a reply is needed, can the recipient answer without first asking which item, what response, or what timing matters? Use supplied facts; a clear update or acknowledgement needs no new ask.
 7. **Tone**: Are facts separated from assumptions about motives, competence, or attitude?
 8. **Channel**: Would a short call, private message, task, or document be cheaper or safer than more chat?
 9. **Closure**: For important work, are the conclusion, owner, next update, and record location clear?
@@ -84,14 +84,15 @@ Choose exactly one outcome:
 - `rewrite`: the message needs structural work to become understandable or actionable.
 - `switch_channel`: text is unlikely to resolve the issue; return a short transition message and channel advice.
 
-Before choosing, scan for empty abstraction, template filling, purposeless repetition, overstatement and audience/channel mismatch. Identify the quote, recipient impact, smallest fix and protected meaning. Compare the whole message before/after: does the edit remove a real misunderstanding, reply burden or explicit style mismatch? "Smoother", "shorter" or "AI-like" alone is not evidence. Keep the original without a concrete gain; no separate planning or style round.
+Before choosing, scan for empty abstraction, template filling, repetition, overstatement and channel mismatch. Identify the quote, likely misunderstanding or unnecessary follow-up, smallest fix and protected meaning. Compare the whole message before/after; fit supplied shared context and register, not one standard office voice. "Smoother", "shorter" or "AI-like" alone is insufficient. Keep the original without a concrete gain; no new planning or style round.
 
 ### 5. Apply the minimum useful change
 
 Use the internal sequence `来意 + 必要背景 + 我的判断 + 对方行动 + 时间或闭环`, but merge or omit parts according to complexity.
 
-- Put the conclusion, risk, or request before supporting history.
-- Keep only context that changes priority, scope, judgment, or ownership.
+- Lead with the actual update, concern or ask and its supplied reason; no generic importance claims or invented stakes.
+- Prefer a familiar verb to noun-heavy process wording; preserve voice, formal terms and unknown actors. Add no new label or mandatory personal voice.
+- Keep context that changes priority, scope, judgment, ownership or emotional meaning. Keep material caveats beside their claim; remove generic warnings and repeated lead-ins only when they add no distinct purpose.
 - Convert "看一下", "跟进一下", "尽快", and "大家" into a bounded action when the source supports it.
 - Preserve an explicit request to act, including its urgency. A shared-context "尽快" can remain; remove blame without changing "please handle this" into "please report progress". Ask for an estimate only when it resolves a real coordination gap. Never invent a delivery commitment.
 - Changing an urgency word alone may be enough for a tone-only problem. Check recipient understanding in context, not a blacklist of urgency words.
@@ -202,7 +203,7 @@ Use the same checks for human and machine output; do not show the internal recor
 
 1. Preserve the input exactly in a temporary source file and the structured candidate in a response file. Run `python3 scripts/validate_response.py RESPONSE.json --source SOURCE.txt --prepare-review REVIEW.json`.
 2. Complete the pending review using `scripts/reader_value.py` guidance and [writing-craft.md](references/writing-craft.md): v2 requires anchored `expression.craft_checks` for supported details, progression and reading flow, plus `meaning.detail_support`. Preserve intent/urgency/uncertainty, voice, useful emotion and each alternative's meaningful difference. A clear short message needs no added fact or story. Quote the candidate and source; retain useful contrasts and decisive caveats. For `reply`, review against supplied context; never choose `pass` without an original draft.
-3. Run `python3 scripts/validate_response.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`. Deliver only after it passes; unresolved issues require a scoped revision. A changed source or response requires a new bound review. `--schema-only` is a developer check and cannot authorize delivery.
+3. Run `python3 scripts/deliver.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`; it calls the existing validator and returns the exact response in a checked envelope. Use only that payload. Missing/stale/failed review blocks output; `--schema-only` cannot deliver. See [checked-delivery.md](references/checked-delivery.md) for caller integration.
 
 The JSON response format and copy/replace behavior are unchanged. This validates the skill output; a separate native application must call the checked path to enforce it in that application.
 

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "data_origin": "fictional workplace fixtures, not real people or measured business results",
+  "evaluation_note": "Observation tags organize maintenance coverage, not universal claims about human cognition or runtime rules. Give only request/source to producers; keep expected and forbidden behaviors for a separate judge.",
+  "cases": [
+    {
+      "id": "HS-C01",
+      "kind": "should_fix",
+      "focus": [
+        "syntax"
+      ],
+      "observations": [
+        "A02",
+        "A03"
+      ],
+      "request": "帮我顺一下这句话，发给同事。",
+      "source_material": "针对数据范围的确认工作尚未完成，因此当前暂不具备对外发送的条件。",
+      "expected_behaviors": [
+        "用直接的确认和发送动作表达",
+        "保留数据范围未确认及不能对外发的关系",
+        "不补责任人"
+      ],
+      "forbidden_behaviors": [
+        "添我或我们作为未知负责人",
+        "新增方法名",
+        "改成数据已经确认"
+      ]
+    },
+    {
+      "id": "HS-C02",
+      "kind": "should_fix",
+      "focus": [
+        "relevance",
+        "syntax"
+      ],
+      "observations": [
+        "H02",
+        "H06",
+        "A03"
+      ],
+      "request": "润色成自然的工作消息。",
+      "source_material": "为实现跨组织协同的有序推进，并确保相关事项的顺利开展，诚邀你在百忙之中于今天五点前确认明天评审用的名单是否齐全，感谢一直以来的大力支持。",
+      "expected_behaviors": [
+        "直接提出今天五点前确认名单齐全的请求",
+        "保留明天评审这一实际用途",
+        "去掉冗长开场但保持礼貌"
+      ],
+      "forbidden_behaviors": [
+        "删除时间要求",
+        "改成今天五点前必须交新名单",
+        "增加关系、紧急程度或附件事实"
+      ]
+    },
+    {
+      "id": "HS-C03",
+      "kind": "relation_preservation",
+      "focus": [
+        "caveats"
+      ],
+      "observations": [
+        "A01"
+      ],
+      "request": "帮我把这条进展同步说清楚。",
+      "source_material": "这次只核对了昨天的数据，暂时没发现异常，今天的数据还没核对。需要说明的是，业务情况较为复杂，应结合实际多角度综合考量。",
+      "expected_behaviors": [
+        "保留只核对昨天、暂未异常、今天未核对",
+        "删除没有具体信息的泛泛提醒",
+        "不增加请求"
+      ],
+      "forbidden_behaviors": [
+        "说数据都没问题",
+        "把暂时没发现改成保证无风险",
+        "新增后续处理承诺"
+      ]
+    },
+    {
+      "id": "HS-C04",
+      "kind": "should_fix",
+      "focus": [
+        "progression"
+      ],
+      "observations": [
+        "H03",
+        "A04"
+      ],
+      "request": "顺一下这条同步消息。",
+      "source_material": "两个接口已经通过联调，另一个还在等测试环境，完成时间还没定。目前已经联调通过的接口是两个。总的来说，两个接口这部分的联调工作已经完成。",
+      "expected_behaviors": [
+        "合并反复说两个已通过",
+        "保留另一个等环境和时间未定"
+      ],
+      "forbidden_behaviors": [
+        "变成全部通过",
+        "增加负责人、日期或催办请求",
+        "换词继续重复同一进展"
+      ]
+    },
+    {
+      "id": "HS-C05",
+      "kind": "relation_preservation",
+      "focus": [
+        "caveats",
+        "syntax"
+      ],
+      "observations": [
+        "H07",
+        "A05"
+      ],
+      "request": "帮我看下这句是否得体。",
+      "source_material": "这个需求我这周接不了，手上的上线还没结束。我可以下周一再看，但现在不能承诺交付时间。",
+      "expected_behaviors": [
+        "保留本周拒绝及真实原因",
+        "保留下周一再看和不承诺交付的边界",
+        "不为柔和把拒绝变接受"
+      ],
+      "forbidden_behaviors": [
+        "承诺下周交付",
+        "改成本周尽量做",
+        "替对方作动机判断或增加道歉"
+      ]
+    },
+    {
+      "id": "HS-C06",
+      "kind": "should_not_fix",
+      "focus": [
+        "progression"
+      ],
+      "observations": [
+        "H01",
+        "H03",
+        "A04"
+      ],
+      "request": "检查这句发在同一讨论串里的回复，前面刚确认了具体安排。",
+      "source_material": "收到，还是按刚才说的来。",
+      "expected_behaviors": [
+        "逐字保留原句",
+        "不重复已明确的共同背景"
+      ],
+      "forbidden_behaviors": [
+        "补不存在的安排细节",
+        "制造正式开头结尾或备选版本",
+        "因为简短而添加新动作"
+      ]
+    }
+  ]
+}
+

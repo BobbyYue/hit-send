@@ -3,7 +3,7 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.4.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -144,6 +144,8 @@ HIT_SEND_PROVIDER=mock npm start
 打开 <http://127.0.0.1:8787>。模型和飞书配置见 [H5 部署说明](apps/feishu-h5/README.md)。
 
 ## 开发与验证
+
+0.5.0 新增[本地检查后交付](skills/hit-send/references/checked-delivery.md)：`scripts/deliver.py` 重新核对推荐稿、备选稿和所提供的原文，再返回同一份响应内容。缺失、未完成、失败或过期的检查会被拦截，验证与指纹计算使用同一份内容。它仍是轻量自检，不冒充独立审阅；响应结构和不自动发送的边界不变。原生与 H5 应用还需单独接入，本次没有部署应用。
 
 0.4.0 改写前先判断已提供的对方背景和发送者立场，再检查修改具体减少了什么误解或追问，不能只凭“更顺、更短”决定改写。清楚的消息保持原样，原本诉求、催办意图、不确定性和有用的情绪信息不能丢失。[技巧对应案例](skills/hit-send/references/writing-craft-cases.md)和[完整消息案例](skills/hit-send/references/writing-composition-examples.md)仅在需要时读取。沿用第 2 版检查记录及现有响应结构，可选 H5 和原生应用本次未新增接入。见[升级说明](CHANGELOG.md)。
 

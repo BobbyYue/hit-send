@@ -2,6 +2,14 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.5.0 - 2026-10-10
+
+- Strengthen reader/recipient relevance, direct syntax, useful context and minimum-change rewriting. Preserve refusal, urgency, uncertainty, emotion and already-clear messages; add fictional fix/keep/fidelity cases.
+- Add `scripts/deliver.py` to run source-bound checks for the recommendation and every alternative, then return the exact response in a checked envelope. Preparation success and schema-only validation cannot authorize this path.
+- Parse and hash the same source/response/review byte buffers, closing the reproduced A-to-B-to-A candidate race. Reject missing, stale or failed reviews and protect original files from overwrite.
+- The wrapper creates no message files by default; optional output is private and exclusive. Callers remain responsible for temporary-file cleanup and must not log messages or send automatically.
+- Upgrade: consume the checked payload directly rather than regenerating text. Review method remains self-check, response JSON remains unchanged, and no extra reviewer or style-only loop is added. This release does not integrate or deploy native/H5 applications or guarantee semantic judgment quality.
+
 ## 0.4.0 - 2026-09-30
 
 - Identify the supplied recipient context, what this message changes, and the writer's stance before rewriting; do not invent missing background or a new communication goal.

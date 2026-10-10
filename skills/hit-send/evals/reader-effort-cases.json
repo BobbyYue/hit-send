@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "data_origin": "fictional workplace fixtures; not real business data",
+  "evaluation_note": "Only request and source_material go to producers. Expected/forbidden behaviors are judge-only. Bounded writing tests do not certify full workflows.",
+  "cases": [
+    {
+      "id": "HS-E01",
+      "kind": "should_fix",
+      "request": "润色草稿“这个能看一下吗？”，让未参与前面讨论的同事知道需要确认什么。只给可发送文字。",
+      "source_material": "这里的“这个”指上线通知草稿，想让对方确认草稿中的上线日期是否准确。没有提供具体日期、链接或回复期限。",
+      "expected_behaviors": [
+        "点明上线通知草稿",
+        "请求确认其中上线日期是否准确",
+        "自然且简短"
+      ],
+      "forbidden_behaviors": [
+        "编造上线日期或回复期限",
+        "声称已附文件或链接",
+        "只把看一下改成审阅一下"
+      ]
+    },
+    {
+      "id": "HS-E02",
+      "kind": "should_not_fix",
+      "request": "检查消息“先按刚才确认的版本发吧。”。同一个讨论串刚确认周报版本，没有其他歧义；清楚就保留。",
+      "source_material": "先按刚才确认的版本发吧。",
+      "expected_behaviors": [
+        "逐字保留",
+        "不为已有共同背景再补说明"
+      ],
+      "forbidden_behaviors": [
+        "新增版本号、负责人或截止日期",
+        "增加客套结尾",
+        "因为刚才是指代而机械重写"
+      ]
+    },
+    {
+      "id": "HS-E03",
+      "kind": "should_not_fix",
+      "request": "检查下面这条进展同步，不需要对方采取行动。",
+      "source_material": "数据还在复核，今天能不能出结果还不确定。",
+      "expected_behaviors": [
+        "保留进展和今天能否出结果的不确定性",
+        "不增加请求"
+      ],
+      "forbidden_behaviors": [
+        "承诺今天发结果",
+        "让对方帮忙加急",
+        "认为没有行动要求所以不完整"
+      ]
+    },
+    {
+      "id": "HS-E04",
+      "kind": "relation_preservation",
+      "request": "这条催稿消息会不会太冲？保持自然，也别削弱实际的担心和时间要求。",
+      "source_material": "稿子约好上午给，我还没收到。下午要评审，我有点担心赶不上。今天中午前能给我吗？",
+      "expected_behaviors": [
+        "保留约定、未收到、下午评审、担心和中午前能否给的问句",
+        "可以保留已得体的原文",
+        "不猜对方动机"
+      ],
+      "forbidden_behaviors": [
+        "把询问变成强制承诺",
+        "去掉时间或担心",
+        "新增指责、道歉或升级威胁"
+      ]
+    }
+  ]
+}
+

@@ -3,7 +3,7 @@
 **Before you send, let AI read the message as the recipient.**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.4.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -148,6 +148,8 @@ HIT_SEND_PROVIDER=mock npm start
 Open <http://127.0.0.1:8787>. See the [H5 deployment guide](apps/feishu-h5/README.md) for model and Feishu/Lark configuration.
 
 ## Development
+
+Version 0.5.0 adds [checked local delivery](skills/hit-send/references/checked-delivery.md): `scripts/deliver.py` rechecks the recommendation and alternatives against the supplied source and returns the exact response bytes. Missing, pending, failed or stale reviews block that path. Validation and fingerprinting use the same byte buffers. It remains a lightweight self-check, never an independent review; the response JSON and no-send rule are unchanged. Native/H5 applications still need explicit integration, and no application deployment is included.
 
 Version 0.4.0 identifies the supplied recipient context and writer's stance before rewriting. Existing reviews explain what misunderstanding or reply burden an edit removes; clearer or shorter wording alone is not sufficient. Clear messages stay unchanged, with intent, urgency, uncertainty and useful emotion preserved. [Contextual cases](skills/hit-send/references/writing-craft-cases.md) and [complete examples](skills/hit-send/references/writing-composition-examples.md) are loaded only when needed. Review version 2 and the response JSON are unchanged. The optional H5 and native applications are not newly integrated with this check. See the [upgrade notes](CHANGELOG.md).
 

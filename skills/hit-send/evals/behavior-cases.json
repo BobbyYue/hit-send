@@ -4,82 +4,29 @@
     {
       "id": "expression_repetition_local_fix",
       "message": "数据已补齐，缺失的数据已经补全了，也就是说现在数据完整了。",
-      "mode": "concise",
-      "allowed_decisions": [
-        "polish",
-        "rewrite"
-      ],
-      "must_preserve": [
-        "数据"
-      ],
-      "must_not_add": [
-        "请",
-        "今天",
-        "验证通过",
-        "我"
-      ],
-      "max_alternatives": 0
+      "mode": "concise", "allowed_decisions": ["polish", "rewrite"],
+      "must_preserve": ["数据"], "must_not_add": ["请", "今天", "验证通过", "我"], "max_alternatives": 0
     },
     {
       "id": "expression_formal_notice_keep",
       "message": "维护通知：周五22:00开始维护，只读副本预计中断10分钟，主库写入不受影响。",
-      "mode": "original",
-      "allowed_decisions": [
-        "pass"
-      ],
-      "must_preserve": [
-        "周五22:00",
-        "预计",
-        "10分钟",
-        "主库写入不受影响"
-      ],
-      "must_not_add": [
-        "哈",
-        "呀",
-        "请及时",
-        "保证"
-      ],
-      "max_alternatives": 0
+      "mode": "original", "allowed_decisions": ["pass"],
+      "must_preserve": ["周五22:00", "预计", "10分钟", "主库写入不受影响"],
+      "must_not_add": ["哈", "呀", "请及时", "保证"], "max_alternatives": 0
     },
     {
       "id": "expression_disagreement_no_action",
       "message": "我不认同这个结论，目前只测了缓存命中的请求，不能说整体性能提升了。",
-      "mode": "original",
-      "allowed_decisions": [
-        "pass"
-      ],
-      "must_preserve": [
-        "不认同",
-        "只测了",
-        "缓存命中",
-        "不能说整体性能提升"
-      ],
-      "must_not_add": [
-        "请",
-        "建议",
-        "今天",
-        "抱歉",
-        "补充测试"
-      ],
-      "max_alternatives": 0
+      "mode": "original", "allowed_decisions": ["pass"],
+      "must_preserve": ["不认同", "只测了", "缓存命中", "不能说整体性能提升"],
+      "must_not_add": ["请", "建议", "今天", "抱歉", "补充测试"], "max_alternatives": 0
     },
     {
       "id": "expression_product_name_not_blacklisted",
       "message": "“赋能”模块的导出入口已恢复，历史文件没有变化。",
-      "mode": "original",
-      "allowed_decisions": [
-        "pass"
-      ],
-      "must_preserve": [
-        "“赋能”",
-        "导出入口已恢复",
-        "历史文件没有变化"
-      ],
-      "must_not_add": [
-        "请",
-        "效率提升"
-      ],
-      "max_alternatives": 0
+      "mode": "original", "allowed_decisions": ["pass"],
+      "must_preserve": ["“赋能”", "导出入口已恢复", "历史文件没有变化"],
+      "must_not_add": ["请", "效率提升"], "max_alternatives": 0
     },
     {
       "id": "relation_repeated_observation",
@@ -200,10 +147,10 @@
     },
     {
       "id": "historical_frustration",
-      "message": "现在知道重要了，当时推进 ABC 策略时都不想做。",
+      "message": "现在知道重要了，当时推进 MMP 策略时都不想做。",
       "mode": "original",
       "allowed_decisions": ["rewrite"],
-      "must_preserve": ["现在", "当时", "ABC"],
+      "must_preserve": ["现在", "当时", "MMP"],
       "must_not_add": ["没有做下去", "没有完成", "没有落地", "下一步", "后续可以"],
       "max_alternatives": 1
     },
@@ -254,10 +201,10 @@
     },
     {
       "id": "domain_term_and_number",
-      "message": "ABC 策略覆盖率是 80%，周三复核口径。",
+      "message": "MMP 策略覆盖率是 80%，周三复核口径。",
       "mode": "concise",
       "allowed_decisions": ["pass", "polish"],
-      "must_preserve": ["ABC", "80%", "周三"],
+      "must_preserve": ["MMP", "80%", "周三"],
       "must_not_add": ["90%", "MMR"],
       "max_alternatives": 1
     },
