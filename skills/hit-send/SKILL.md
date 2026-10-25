@@ -25,6 +25,11 @@ Apply this priority when goals conflict:
 - Preserve the message's job and stance, not just its topic. Do not turn an observation, disagreement, refusal, or expression of frustration into an action request unless the source or user supplies that goal.
 - When replacing a motive judgment, do not invent a different outcome. Recast it as the writer's perception, or use only observable facts already present in the source.
 - Treat the method as an internal checklist, not a visible five-part template.
+- Treat tone, length, audience, and rewrite requests as instructions to the agent,
+  not text for the recipient. Keep literal or paraphrased compliance statements
+  out of `revised_text` and alternatives; keep necessary coaching separate.
+  Preserve actual recipient-facing requests, agreements, and quoted instructions.
+  Check this boundary in the existing context review, not by keyword deletion.
 
 ## Runtime Workflow
 
@@ -202,10 +207,10 @@ When the caller requests `MACHINE_JSON`, return only JSON matching [scripts/resp
 Use the same checks for human and machine output; do not show the internal record to the user. For human output, first represent the recommendation with the existing response schema internally. Keep source text ephemeral and local; remove temporary message/review files after validation unless the user explicitly requests retention. Do not log selected text.
 
 1. Preserve the input exactly in a temporary source file and the structured candidate in a response file. Run `python3 scripts/validate_response.py RESPONSE.json --source SOURCE.txt --prepare-review REVIEW.json`.
-2. Complete the pending review using `scripts/reader_value.py` guidance and [writing-craft.md](references/writing-craft.md): v2 requires anchored `expression.craft_checks` for supported details, progression and reading flow, plus `meaning.detail_support`. Preserve intent/urgency/uncertainty, voice, useful emotion and each alternative's meaningful difference. A clear short message needs no added fact or story. Quote the candidate and source; retain useful contrasts and decisive caveats. For `reply`, review against supplied context; never choose `pass` without an original draft.
+2. Complete the v4 review using `scripts/reader_value.py` and [writing-craft.md](references/writing-craft.md): retain anchored craft/detail evidence, `meaning.source_attribution` and `selection.context_review` for the recommendation and every alternative. In the existing pass apply [contextual value](references/context-value.md): compare suspect lines with/without in supplied shared context; omit repeated caveats and internal checks, not uncertainty, voice, useful emotion or decisive limits. A clear message needs no expansion. For `reply`, review supplied context; never choose `pass` without an original draft.
 3. Run `python3 scripts/deliver.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`; it calls the existing validator and returns the exact response in a checked envelope. Use only that payload. Missing/stale/failed review blocks output; `--schema-only` cannot deliver. See [checked-delivery.md](references/checked-delivery.md) for caller integration.
 
-The JSON response format and copy/replace behavior are unchanged. This validates the skill output; a separate native application must call the checked path to enforce it in that application.
+The JSON response format and copy/replace behavior are unchanged. Applications use [host_delivery.py](scripts/host_delivery.py) before exposing results; see [host-integration.md](references/host-integration.md) for integration and calibration. Installing the Skill alone does not connect an application.
 
 ## Method Reference
 

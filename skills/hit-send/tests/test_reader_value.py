@@ -48,6 +48,16 @@ class ReaderValueTests(unittest.TestCase):
         del self.review["checks"]["meaning"]["detail_support"]
         self.assertTrue(self.errors(self.review))
 
+    def test_missing_attribution_blocks_existing_message_check(self):
+        del self.review['checks']['meaning']['source_attribution']
+        self.assertTrue(self.errors(self.review))
+
+    def test_source_author_mix_blocks_message_check(self):
+        self.text = self.source = '邮件称已加入字段，但是否相同仍待确认。'
+        review = structural_review(self.axes, self.binding, self.text, self.source, self.render)
+        review['checks']['selection']['context_review']['attribution_replay']['items'][0]['kind'] = 'source-fact'
+        self.assertTrue(any('reader/source disagreement' in error for error in self.errors(review)))
+
     def test_old_review_requires_regeneration(self):
         self.review["version"] = 1
         self.assertTrue(self.errors(self.review))

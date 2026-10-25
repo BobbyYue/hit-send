@@ -1,5 +1,12 @@
 # Checked Delivery
 
+For a host integration, use [host_delivery.py](../scripts/host_delivery.py) to
+invoke this checked path and validate current context, state and exact returned
+bytes before exposure. See [host-integration.md](host-integration.md) for the
+caller responsibilities, environment limits and separate judgment calibration.
+The consumer is implemented; actual third-party UI integration still needs its
+own acceptance test. No platform is certified merely by installation.
+
 Use `python3 scripts/deliver.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`.
 This reruns `validate_response.validate_delivery`, covering the recommendation
 and every alternative, and returns the exact response bytes in a JSON envelope.

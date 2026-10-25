@@ -15,6 +15,7 @@ Preserve original intent and facts first. Then optimize recipient comprehension,
 - Prefer the smallest useful edit. If the original is ready, choose `pass` and return it exactly.
 - Do not make casual language formal or template-like.
 - Do not make a short message longer unless missing context or action would otherwise cause another round trip.
+- In the existing send check, compare suspect caveats/explanations with and without the line in supplied shared context. Omit what is already clear and internal correctness reports; keep a concrete change to understanding, judgment, action or required disclosure. Tighten an overstated claim directly instead of appending a disclaimer. No new output field, tool call or review round.
 - Keep legitimate disagreement, urgency, emotion, accountability, and boundaries visible.
 - Remove guesses about another person's motives, character, attitude, or competence.
 - Preserve the message's job and stance, not only its topic. An observation, disagreement, refusal, expression of frustration, or record of a past problem must not become an action request unless the source or writer goal asks for action.
@@ -23,6 +24,8 @@ Preserve original intent and facts first. Then optimize recipient comprehension,
 ## Meaning and stance guard
 
 Before rewriting, use supplied context to infer the job: inform, ask, decide, disagree, move work forward, set a boundary, or leave a record. Identify what the recipient knows and what changes. Do not expand shared context; add a needed referent only from supplied facts. Keep useful history/emotion. No invented context, new ask or planning form.
+
+Keep quoted/source statements distinct from the sender's judgment or request. Do not attach an unsupported negative conclusion to a quote, or make a party merely mentioned sound like the speaker. Unconfirmed equality is not confirmed inequality. Use the same source/reader check for every alternative; do not add explanatory labels or expand a clear message.
 
 - Treat the source text as the authority. Do not add a completion state, consensus, owner, action, deadline, commitment, recommendation, cause, or business outcome.
 - Preserve names, numeric values, dates, links, domain terms, negation, uncertainty, responsibility, and temporal contrasts such as `现在` versus `当时`.

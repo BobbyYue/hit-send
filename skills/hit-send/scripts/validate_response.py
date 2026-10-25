@@ -165,7 +165,7 @@ def validate_delivery(payload, source, review, binding):
         errors.append("each alternative requires its own meaning and strategy check")
     else:
         for alternative, check in zip(payload["alternatives"], variants):
-            errors.extend(reader_value.validate(check, ("expression", "meaning"), binding,
+            errors.extend(reader_value.validate(check, ("expression", "selection", "meaning"), binding,
                 alternative["text"], source=source))
     return errors
 
@@ -186,8 +186,8 @@ def main() -> int:
     import hashlib
     binding = hashlib.sha256((reader_value.sha256(path) + ":" + (reader_value.sha256(args.source) if args.source else "")).encode()).hexdigest()
     if args.prepare_review:
-        template = reader_value.template(("expression", "selection", "meaning"), binding)
-        template["variants"] = [reader_value.template(("expression", "meaning"), binding) for _ in payload.get("alternatives", [])]
+        template = reader_value.template(("expression", "selection", "meaning"), binding, payload['revised_text'], source or '')
+        template["variants"] = [reader_value.template(("expression", "selection", "meaning"), binding, item['text'], source or '') for item in payload.get("alternatives", [])]
         args.prepare_review.write_text(json.dumps(template, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print("PENDING: complete the editorial review before delivery")
         return 0

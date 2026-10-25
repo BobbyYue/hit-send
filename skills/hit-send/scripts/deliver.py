@@ -28,11 +28,11 @@ def checked_response(response, source, review):
                 "artifact_sha256": delivery.digest(response_bytes), "verified_inputs": hashes}
 
     scripts = Path(__file__).resolve().parent
-    return delivery.pack(response, [source, review, *scripts.glob("*.py")], verify)
+    return delivery.pack(response, [source, review, *scripts.glob("*.py")], verify, opaque_paths=[source])
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
     parser.add_argument("response", type=Path)
     parser.add_argument("--source", required=True, type=Path)
     parser.add_argument("--review", required=True, type=Path)

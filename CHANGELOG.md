@@ -2,6 +2,14 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.6.0 - 2026-10-25
+
+- Synchronize the current contextual-value and source-attribution checks for the recommendation and every alternative; preserve shared-context facts, necessary uncertainty and clear original wording.
+- Separate instructions to the assistant from the copyable message through the existing review. Keep genuine recipient requests, agreements and quoted instructions when they belong to the message.
+- Strengthen evidence-file and caller-context binding at checked delivery; reject stale tasks, changed evidence, conflicting references and output-option abbreviations that could redirect blocked output.
+- Add `scripts/host_delivery.py` and integration guidance. The response schema and no-auto-send behavior are unchanged; native and H5 applications are not newly integrated or deployed.
+- Add a frozen-reference judgment-calibration utility and synthetic format example, including failed and missing runs. This does not certify real reviewer accuracy or human outcomes, and adds no independent reviewer or style-only round.
+
 ## 0.5.0 - 2026-10-10
 
 - Strengthen reader/recipient relevance, direct syntax, useful context and minimum-change rewriting. Preserve refusal, urgency, uncertainty, emotion and already-clear messages; add fictional fix/keep/fidelity cases.

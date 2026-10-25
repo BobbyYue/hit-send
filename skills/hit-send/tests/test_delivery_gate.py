@@ -31,6 +31,10 @@ class DeliveryGateTests(unittest.TestCase):
         self.assertTrue(validate_response.validate_delivery(self.response, self.text, None, "binding"))
         self.assertTrue(validate_response.validate_delivery(self.response, self.text, self.review, "changed"))
 
+    def test_missing_context_comparison_blocks_delivery(self):
+        del self.review['checks']['selection']['context_review']
+        self.assertTrue(validate_response.validate_delivery(self.response, self.text, self.review, 'binding'))
+
     def test_reviewer_detected_request_loss_cannot_pass(self):
         self.response.update(decision="rewrite", revised_text="What is the current progress?")
         self.review = structural_review(("expression", "selection", "meaning"), "binding", self.response["revised_text"], self.text)
@@ -41,7 +45,7 @@ class DeliveryGateTests(unittest.TestCase):
         self.response["decision"] = "polish"
         self.response["alternatives"] = [{"label": "Softer", "text": "Could you finish the known task? It is needed tomorrow.", "rationale": "Less direct request, same timing."}]
         self.assertTrue(validate_response.validate_delivery(self.response, self.text, self.review, "binding"))
-        self.review["variants"] = [structural_review(("expression", "meaning"), "binding", self.response["alternatives"][0]["text"], self.text)]
+        self.review["variants"] = [structural_review(("expression", "selection", "meaning"), "binding", self.response["alternatives"][0]["text"], self.text)]
         self.assertEqual(validate_response.validate_delivery(self.response, self.text, self.review, "binding"), [])
 
     def test_cli_requires_review_and_schema_only_is_explicit(self):

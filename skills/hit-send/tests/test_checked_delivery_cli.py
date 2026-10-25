@@ -83,6 +83,22 @@ class CheckedDeliveryCLITests(unittest.TestCase):
         self.assertNotEqual(self.run_delivery("--output", str(self.source)).returncode, 0)
         self.assertEqual(before, self.source.read_bytes())
 
+    def test_json_message_metadata_is_not_evidence(self):
+        content = json.dumps({"message": "SYNTHETIC: file not uploaded yet.",
+                              "path": str(self.base / "not-uploaded.zip"), "sha256": "a" * 64})
+        self.source = self.base / "source.json"
+        self.source.write_text(content)
+        payload = json.loads(self.response.read_text())
+        payload["revised_text"] = content
+        self.response.write_text(json.dumps(payload))
+        binding = hashlib.sha256((reader_value.sha256(self.response) + ":" + reader_value.sha256(self.source)).encode()).hexdigest()
+        self.review.write_text(json.dumps(structural_review(("expression", "selection", "meaning"), binding, content, content)))
+        result = deliver.checked_response(self.response, self.source, self.review)
+        self.assertEqual(base64.b64decode(result["payload"]), self.response.read_bytes())
+        self.source.write_text(content + " changed")
+        with self.assertRaises(checked_delivery.DeliveryBlocked):
+            deliver.checked_response(self.response, self.source, self.review)
+
     def test_aba_candidate_change_cannot_pass_with_post_validation_hash(self):
         accepted = self.response.read_bytes()
         wrong = json.loads(accepted)
@@ -97,11 +113,11 @@ class CheckedDeliveryCLITests(unittest.TestCase):
             self.response.write_bytes(unreviewed)
             return errors
 
-        def pack_with_switch(artifact, inputs, verify):
+        def pack_with_switch(artifact, inputs, verify, **kwargs):
             def switched():
                 self.response.write_bytes(accepted)
                 return verify()
-            return real_pack(artifact, inputs, switched)
+            return real_pack(artifact, inputs, switched, **kwargs)
 
         with mock.patch.object(checked_delivery, "pack", side_effect=pack_with_switch), \
              mock.patch.object(deliver, "validate_delivery", side_effect=validation_with_restore), \
