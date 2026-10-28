@@ -210,6 +210,8 @@ Use the same checks for human and machine output; do not show the internal recor
 2. Complete the v4 review using `scripts/reader_value.py` and [writing-craft.md](references/writing-craft.md): retain anchored craft/detail evidence, `meaning.source_attribution` and `selection.context_review` for the recommendation and every alternative. In the existing pass apply [contextual value](references/context-value.md): compare suspect lines with/without in supplied shared context; omit repeated caveats and internal checks, not uncertainty, voice, useful emotion or decisive limits. A clear message needs no expansion. For `reply`, review supplied context; never choose `pass` without an original draft.
 3. Run `python3 scripts/deliver.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`; it calls the existing validator and returns the exact response in a checked envelope. Use only that payload. Missing/stale/failed review blocks output; `--schema-only` cannot deliver. See [checked-delivery.md](references/checked-delivery.md) for caller integration.
 
+The existing context review also requires [defensive-expression](references/defensive-expression.md) for the recommendation and every alternative. Count confirmed excess separately from lexical candidates; unresolved excess or pending judgments block delivery. Keep necessary uncertainty and the sender's stance. Delete temporary metric records with the other message files.
+
 The JSON response format and copy/replace behavior are unchanged. Applications use [host_delivery.py](scripts/host_delivery.py) before exposing results; see [host-integration.md](references/host-integration.md) for integration and calibration. Installing the Skill alone does not connect an application.
 
 ## Method Reference

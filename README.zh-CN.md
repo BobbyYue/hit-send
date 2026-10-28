@@ -3,7 +3,7 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.6.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.7.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -144,6 +144,8 @@ HIT_SEND_PROVIDER=mock npm start
 打开 <http://127.0.0.1:8787>。模型和飞书配置见 [H5 部署说明](apps/feishu-h5/README.md)。
 
 ## 开发与验证
+
+0.7.0 为推荐版和每个备选加入[防御性表达检查](skills/hit-send/references/defensive-expression.md)：判断免责或兜底是否帮助当前收件人，保留必要的不确定性与发送者立场，交付前核验当前稿件的第4版上下文审读记录。计数留在内部记录中，消息结构及预览、复制行为不变。
 
 0.6.0 新增[平台交付入口](skills/hit-send/references/host-integration.md)，返回内容前重新核对实际证据与当前任务；在原有检查中区分修改要求与可复制的消息，保留真正面向收件人的请求和必要背景。应用仍须主动接入；响应结构、轻量自检和不自动发送的边界不变，本次没有部署原生或 H5 应用。新增的判断校准工具统计错误和遗漏运行，不声称已经验证真实读者效果。
 

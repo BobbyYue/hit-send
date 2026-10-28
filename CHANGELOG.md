@@ -2,6 +2,13 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.7.0 - 2026-10-28
+
+- Require a defensive-expression record in the existing context review for the recommendation and every alternative. Count candidates, confirmed excess and unresolved judgments separately; preserve useful uncertainty, refusals, requests and sender intent.
+- Bind deletion/direct comparisons, attribution and counts to the exact message. Missing, stale or unresolved records block the existing checked-delivery path.
+- Add paired synthetic cases and regression checks for unnecessary disclaimers, necessary negative statements, unflagged concerns and changed-text rejection.
+- Regenerate affected context reviews using version 4. Response JSON, lightweight self-review, temporary-text cleanup and no-auto-send behavior remain unchanged; this release does not redeploy the optional native or H5 application.
+
 ## 0.6.0 - 2026-10-25
 
 - Synchronize the current contextual-value and source-attribution checks for the recommendation and every alternative; preserve shared-context facts, necessary uncertainty and clear original wording.
