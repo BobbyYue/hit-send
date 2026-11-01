@@ -2,6 +2,13 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.8.0 - 2026-11-01
+
+- Check whether the recipient can locate the supplied update, intent or request and any conditions needed to act. Reuse the existing self-review for the recommendation and each alternative; clear short messages stay short.
+- Require exact-message `scan_reading` evidence in `reader_value` version 5. Reject missing, stale, unanchored, incomplete or failed records. Preserve real short quotes and record buried or omitted conditions as failures.
+- Add synthetic cases and regression tests for message conditions, unchanged clear originals, review completeness and malformed records. Expand Chinese defensive-expression candidates without turning matches into automatic rewrites.
+- Regenerate affected review records. Response JSON, review rounds, preview/copy behavior, temporary-text cleanup and no-auto-send behavior remain unchanged. This Skill release leaves the optional native and H5 applications unchanged.
+
 ## 0.7.0 - 2026-10-28
 
 - Require a defensive-expression record in the existing context review for the recommendation and every alternative. Count candidates, confirmed excess and unresolved judgments separately; preserve useful uncertainty, refusals, requests and sender intent.

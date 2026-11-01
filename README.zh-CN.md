@@ -3,7 +3,7 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.7.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.8.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -144,6 +144,8 @@ HIT_SEND_PROVIDER=mock npm start
 打开 <http://127.0.0.1:8787>。模型和飞书配置见 [H5 部署说明](apps/feishu-h5/README.md)。
 
 ## 开发与验证
+
+0.8.0 为推荐版和每个备选加入[扫读检查](skills/hit-send/references/scan-reading.md)：收件人能否找到消息的进展或请求，以及采取行动所需的条件。清楚的短消息保持简短；原有自检使用第5版 `reader_value` 记录，同时扩大防御性表达候选的识别范围。消息结构、预览、复制及不自动发送的行为保持不变。
 
 0.7.0 为推荐版和每个备选加入[防御性表达检查](skills/hit-send/references/defensive-expression.md)：判断免责或兜底是否帮助当前收件人，保留必要的不确定性与发送者立场，交付前核验当前稿件的第4版上下文审读记录。计数留在内部记录中，消息结构及预览、复制行为不变。
 

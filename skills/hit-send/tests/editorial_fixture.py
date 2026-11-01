@@ -1,6 +1,7 @@
 """Synthetic receipt factory ONLY for structural tests, never a semantic review."""
 import reader_value
 from context_fixture import structural_context, structural_attribution
+from scan_fixture import structural_scan
 
 
 def structural_review(axes, binding, text, source="", render=""):
@@ -10,6 +11,7 @@ def structural_review(axes, binding, text, source="", render=""):
                     quote=text[:100], reader_effect="STRUCTURAL FIXTURE, not a reader judgment.",
                     protected_meaning="STRUCTURAL FIXTURE, not source verification.")
         if axis == "expression":
+            item["scan_reading"] = structural_scan(text, reader_value.SCAN_PROFILE)
             for probe in item["craft_checks"].values():
                 probe.update(status="pass", quote=text[:100], reason="STRUCTURAL FIXTURE, not an assessment of writing quality.")
         if axis == "selection":

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "data_origin": "Synthetic workplace cases for regression; no measured outcomes or user message history.",
+  "evaluation": "Use a fresh reviewer without exposing expected_decision; compare source meaning, cue takeaway, decisive conditions and preserved detail. Module validation is not human eye-tracking or full Skill acceptance.",
+  "cases": [
+    {
+      "id": "M1",
+      "profile": "message",
+      "reader": "同项目同事",
+      "task": "判断是否还需回复或行动",
+      "source": "收到，谢谢。",
+      "candidate": "收到，谢谢。",
+      "expected_decision": "keep"
+    },
+    {
+      "id": "M2",
+      "profile": "message",
+      "reader": "准备发布的同事",
+      "task": "判断是否能立刻上线",
+      "source": "验证通过后再上线，结果出来我会在群里同步。",
+      "candidate": "可以上线。等验证结果出来我会在群里同步。",
+      "expected_decision": "revise"
+    }
+  ]
+}
