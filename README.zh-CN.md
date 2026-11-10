@@ -3,7 +3,7 @@
 **发送前，让 AI 替对方先读一遍。**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.8.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.9.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -144,6 +144,8 @@ HIT_SEND_PROVIDER=mock npm start
 打开 <http://127.0.0.1:8787>。模型和飞书配置见 [H5 部署说明](apps/feishu-h5/README.md)。
 
 ## 开发与验证
+
+0.9.0 检查每个版本是否说清原意、保留相关背景，并在内容说完后结束，避免额外添加 Agent 的服务提议。发送者真实的帮助意图和“OK”这样的清楚短回复继续保留。原有自检使用[第5版上下文检查](skills/hit-send/references/context-value.md#answer-selection-and-ending)，缺少答案或存在未解决的冗余时会阻止正式交付。消息结构、预览、复制及不自动发送的行为保持不变。
 
 0.8.0 为推荐版和每个备选加入[扫读检查](skills/hit-send/references/scan-reading.md)：收件人能否找到消息的进展或请求，以及采取行动所需的条件。清楚的短消息保持简短；原有自检使用第5版 `reader_value` 记录，同时扩大防御性表达候选的识别范围。消息结构、预览、复制及不自动发送的行为保持不变。
 

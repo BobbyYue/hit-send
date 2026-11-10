@@ -2,6 +2,12 @@
 
 All notable changes to Hit Send are documented here.
 
+## 0.9.0 - 2026-11-10
+
+- Require answer, selection and ending observations in context-review version 5 for the recommendation and each alternative. Existing delivery rejects unresolved judgments even when phrase checks are clear.
+- Preserve the sender's actual requests, offers, useful emotion and uncertainty; keep an already-clear short message unchanged. Remove unrequested agent service framing from copyable messages.
+- Add synthetic regression pairs and final-delivery tests. The message JSON, review rounds, temporary-text handling, optional applications and no-auto-send boundary remain unchanged.
+
 ## 0.8.0 - 2026-11-01
 
 - Check whether the recipient can locate the supplied update, intent or request and any conditions needed to act. Reuse the existing self-review for the recommendation and each alternative; clear short messages stay short.

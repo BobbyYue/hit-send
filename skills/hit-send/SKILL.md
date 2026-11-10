@@ -92,6 +92,7 @@ Choose exactly one outcome:
 Before choosing, scan for empty abstraction, template filling, repetition, overstatement and channel mismatch. Identify the quote, likely misunderstanding or unnecessary follow-up, smallest fix and protected meaning. Compare the whole message before/after; fit supplied shared context and register, not one standard office voice. "Smoother", "shorter" or "AI-like" alone is insufficient. Keep the original without a concrete gain; no new planning or style round.
 
 Plan what the recipient should see first using the supplied intent/update/ask and decisive conditions. While revising, scan the actual opening and line starts together; preserve needed context, no invented request or forced headings. Complete [scan-reading.md](references/scan-reading.md) in the existing delivery check; a clear short message can remain exactly unchanged.
+Match the original communicative job: an update, request, disagreement or useful emotional expression need not become a decision memo. Generic reassurance and offers from the agent stay outside the copyable message; preserve an offer or request actually made by the sender.
 
 ### 5. Apply the minimum useful change
 
@@ -213,6 +214,7 @@ Use the same checks for human and machine output; do not show the internal recor
 3. Run `python3 scripts/deliver.py RESPONSE.json --source SOURCE.txt --review REVIEW.json`; it calls the existing validator and returns the exact response in a checked envelope. Use only that payload. Missing/stale/failed review blocks output; `--schema-only` cannot deliver. See [checked-delivery.md](references/checked-delivery.md) for caller integration.
 
 The existing context review also requires [defensive-expression](references/defensive-expression.md) for the recommendation and every alternative. Count confirmed excess separately from lexical candidates; unresolved excess or pending judgments block delivery. Keep necessary uncertainty and the sender's stance. Delete temporary metric records with the other message files.
+[Context review v5](references/context-value.md#answer-selection-and-ending) requires quoted judgments on answer delivery, selection and ending for each version. A zero-candidate message can still leave the recipient's question unanswered or contain an unrequested closing offer. Stop at the smallest useful revision; keep a clear original unchanged.
 
 The JSON response format and copy/replace behavior are unchanged. Applications use [host_delivery.py](scripts/host_delivery.py) before exposing results; see [host-integration.md](references/host-integration.md) for integration and calibration. Installing the Skill alone does not connect an application.
 

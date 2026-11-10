@@ -35,6 +35,14 @@ class DeliveryGateTests(unittest.TestCase):
         del self.review['checks']['selection']['context_review']
         self.assertTrue(validate_response.validate_delivery(self.response, self.text, self.review, 'binding'))
 
+    def test_answer_selection_ending_failures_block_real_delivery(self):
+        for key in ('answer', 'selection', 'ending'):
+            review = copy.deepcopy(self.review)
+            review['checks']['selection']['context_review']['whole_text_scan'][key].update(
+                status='revise', reason='SYNTHETIC unresolved recipient need', repair='Restore the supplied intent.')
+            errors = validate_response.validate_delivery(self.response, self.text, review, 'binding')
+            self.assertTrue(any('reader_delivery unresolved' in error for error in errors))
+
     def test_reviewer_detected_request_loss_cannot_pass(self):
         self.response.update(decision="rewrite", revised_text="What is the current progress?")
         self.review = structural_review(("expression", "selection", "meaning"), "binding", self.response["revised_text"], self.text)

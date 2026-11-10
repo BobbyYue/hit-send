@@ -3,7 +3,7 @@
 **Before you send, let AI read the message as the recipient.**
 
 [![Validate](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml/badge.svg)](https://github.com/BobbyYue/hit-send/actions/workflows/validate.yml)
-[![Version](https://img.shields.io/badge/version-0.8.0-2563EB.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.9.0-2563EB.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16803C.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-open_format-0B7A55.svg)](https://agentskills.io/)
 
@@ -148,6 +148,8 @@ HIT_SEND_PROVIDER=mock npm start
 Open <http://127.0.0.1:8787>. See the [H5 deployment guide](apps/feishu-h5/README.md) for model and Feishu/Lark configuration.
 
 ## Development
+
+Version 0.9.0 checks that each version communicates the intended message, keeps relevant context and ends without unrequested agent offers. A real offer from the sender and clear short replies such as "OK" remain valid. The existing self-review requires [context-review version 5](skills/hit-send/references/context-value.md#answer-selection-and-ending); missing answers or unresolved padding block checked delivery. Message JSON, preview/copy behavior and no-auto-send behavior remain unchanged.
 
 Version 0.8.0 adds a [scan-reading check](skills/hit-send/references/scan-reading.md) for the recommendation and every alternative: can the recipient find the update or request and the conditions needed to act? A clear short message stays short. The existing self-review now requires `reader_value` version 5 and recognizes more defensive-expression candidates. Message JSON, preview/copy behavior and no-auto-send behavior remain unchanged.
 
